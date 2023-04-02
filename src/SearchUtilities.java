@@ -17,7 +17,6 @@ public class SearchUtilities {
 
     }
 
-
     /**
      * PrintSearchResult
      */
@@ -28,43 +27,40 @@ public class SearchUtilities {
 
     }
 
-
     /**
      * BinarySearch
      */
     public static int binarySearch(int[] sortedArray, int numberToFind) {
 
+        int result = -1;
+        if (sortedArray.length == 0) {
+            return result;
+        }
+
         int minIdx = 0;
         int maxIdx = sortedArray.length - 1;
         int midIdx = (minIdx + maxIdx) / 2;
 
-
-        while (numberToFind != sortedArray[midIdx]) {
-
+        while ((numberToFind != sortedArray[midIdx])) {
             if (minIdx == midIdx) {
                 break;
             }
+
             if (numberToFind < sortedArray[midIdx]) {
                 maxIdx = midIdx;
                 midIdx = (minIdx + maxIdx) / 2;
             } else if (numberToFind > sortedArray[midIdx]) {
-                minIdx = midIdx;
+                minIdx = midIdx + 1;
                 midIdx = (minIdx + maxIdx) / 2;
             }
-
         }
 
-        int result = 0;
-
-        if ((minIdx == midIdx) && (numberToFind != sortedArray[midIdx])) {
-            result = -1;
-        } else {
+        if (numberToFind == sortedArray[midIdx]) {
             result = midIdx;
         }
 
         return result;
     }
-
 
     /**
      * LinearSearch
@@ -90,6 +86,4 @@ public class SearchUtilities {
 
         return result;
     }
-
-
 }
