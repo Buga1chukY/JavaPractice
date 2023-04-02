@@ -68,19 +68,20 @@ public class SearchUtilities {
     public static int linearSearch(int[] array, int numberToFind) {
 
         int index = 0;
+        int result = -1;
+        if (array.length == 0) {
+            return result;
+        }
 
         while (numberToFind != array[index]) {
+
             index++;
             if (index == array.length) {
-                break;
+                return result;
             }
         }
 
-        int result = 0;
-
-        if (index == array.length) {
-            result = -1;
-        } else {
+        if (numberToFind == array[index]) {
             result = index;
         }
 
