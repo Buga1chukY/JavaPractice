@@ -15,12 +15,10 @@ public class SortUtilities {
 
     }
 
-
     /**
      * BabbleSort
      */
     public static int[] bubbleSort(int[] unsortedArray) {
-
 
         boolean isAll = false;
 
@@ -46,11 +44,14 @@ public class SortUtilities {
         return unsortedArray;
     }
 
-
     /**
      * SelectionSort
      */
     public static int[] selectionSort(int[] unsortedArray) {
+
+        if (unsortedArray.length == 0) {
+            return unsortedArray;
+        }
 
         int min = unsortedArray[0];
 
@@ -67,12 +68,10 @@ public class SortUtilities {
             if (i + 1 != unsortedArray.length) {
                 min = unsortedArray[i + 1];
             }
-
         }
 
         return unsortedArray;
     }
-
 
     /**
      * InsertionSort
@@ -103,7 +102,6 @@ public class SortUtilities {
 
         return unsortedArray;
     }
-
 
     /**
      * PrintSortResult
