@@ -7,7 +7,7 @@ public class SortUtilities {
 
         int[] sortedArray1 = bubbleSort(array1);
         int[] sortedArray2 = selectionSort(array2);
-        int[] sortedArray3 = insertionSort(array3);
+        int[] sortedArray3 = insertionSort_v1(array3);
 
         printArray(sortedArray1);
         printArray(sortedArray2);
@@ -73,15 +73,15 @@ public class SortUtilities {
         return unsortedArray;
     }
 
+
     /**
-     * InsertionSort
+     * InsertionSort_v1
      */
-    public static int[] insertionSort(int[] unsortedArray) {
-        int counter = 0;
+    public static int[] insertionSort_v1(int[] unsortedArray) {
         int plus = 0;
 
-        int i = 0;
-        for (; i < unsortedArray.length; i++) {
+        for (int i = 0; i < unsortedArray.length; i++) {
+            int counter = 0;
 
             for (int j = 0; j < unsortedArray.length; j++) {
                 if (unsortedArray[i] > unsortedArray[j]) {
@@ -89,19 +89,26 @@ public class SortUtilities {
                 }
             }
 
-            plus = unsortedArray[counter];
-            unsortedArray[counter] = unsortedArray[i];
-            unsortedArray[i] = plus;
+            if (unsortedArray[i] != unsortedArray[counter]) {
+                plus = unsortedArray[counter];
+                unsortedArray[counter] = unsortedArray[i];
+                unsortedArray[i] = plus;
 
-            if (i != counter) {
-                i--;
+                if (i != counter) {
+                    i--;
+                }
             }
-
-            counter = 0;
         }
 
         return unsortedArray;
     }
+
+    /**
+     * InsertionSort
+     */
+
+    //реализовать InsertionSort
+
 
     /**
      * PrintSortResult
