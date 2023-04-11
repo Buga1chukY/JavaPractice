@@ -79,7 +79,6 @@ public class SortUtilities {
      * InsertionSort_v1
      */
     public static int[] insertionSort_v1(int[] unsortedArray) {
-        int plus = 0;
 
         for (int i = 0; i < unsortedArray.length; i++) {
             int counter = 0;
@@ -91,9 +90,9 @@ public class SortUtilities {
             }
 
             if (unsortedArray[i] != unsortedArray[counter]) {
-                plus = unsortedArray[counter];
+                int temp = unsortedArray[counter];
                 unsortedArray[counter] = unsortedArray[i];
-                unsortedArray[i] = plus;
+                unsortedArray[i] = temp;
 
                 if (i != counter) {
                     i--;
@@ -109,16 +108,15 @@ public class SortUtilities {
      */
     public static int[] insertionSort(int[] unsortedArray) {
 
-        int plus = 0;
         for (int i = 1; i < unsortedArray.length; i++) {
 
             int previousDigit = i - 1;
             int currentFindDigit = unsortedArray[i];
 
             while ((previousDigit >= 0) && (currentFindDigit < unsortedArray[previousDigit])) {
-                plus = unsortedArray[previousDigit];
+                int temp = unsortedArray[previousDigit];
                 unsortedArray[previousDigit] = unsortedArray[previousDigit + 1];
-                unsortedArray[previousDigit + 1] = plus;
+                unsortedArray[previousDigit + 1] = temp;
                 previousDigit--;
             }
         }

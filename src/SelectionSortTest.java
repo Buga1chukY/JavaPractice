@@ -15,9 +15,7 @@ public class SelectionSortTest {
         int[] actualArray = SortUtilities.selectionSort(unsortedArray);
         int[] expectedArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
 
-        if (!Arrays.equals(actualArray, expectedArray)) {
-            throw new AssertionError("Algo does not work properly");
-        }
+        AssertUtilities.assertEquals(actualArray, expectedArray);
 
         System.out.println("Test 1 is pass");
     }
@@ -28,9 +26,7 @@ public class SelectionSortTest {
         int[] actualArray = SortUtilities.selectionSort(unsortedArray);
         int[] expectedArray = {1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10, 11, 20};
 
-        if (!Arrays.equals(actualArray, expectedArray)) {
-            throw new AssertionError("Algo does not work properly");
-        }
+        AssertUtilities.assertEquals(actualArray, expectedArray);
 
         System.out.println("Test 2 is pass");
     }
@@ -41,9 +37,7 @@ public class SelectionSortTest {
         int[] actualArray = SortUtilities.selectionSort(unsortedArray);
         int[] expectedArray = {0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10, 11, 20};
 
-        if (!Arrays.equals(actualArray, expectedArray)) {
-            throw new AssertionError("Algo does not work properly");
-        }
+        AssertUtilities.assertEquals(actualArray, expectedArray);
 
         System.out.println("Test 3 is pass");
     }
@@ -54,9 +48,7 @@ public class SelectionSortTest {
         int[] actualArray = SortUtilities.selectionSort(unsortedArray);
         int[] expectedArray = {};
 
-        if (!Arrays.equals(actualArray, expectedArray)) {
-            throw new AssertionError("Algo does not work properly");
-        }
+        AssertUtilities.assertEquals(actualArray, expectedArray);
 
         System.out.println("Test 4 is pass");
     }
@@ -67,9 +59,7 @@ public class SelectionSortTest {
         int[] actualArray = SortUtilities.selectionSort(unsortedArray);
         int[] expectedArray = {0, 0, 0, 0, 0, 0};
 
-        if (!Arrays.equals(actualArray, expectedArray)) {
-            throw new AssertionError("Algo does not work properly");
-        }
+        AssertUtilities.assertEquals(actualArray, expectedArray);
 
         System.out.println("Test 5 is pass");
     }

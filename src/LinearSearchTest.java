@@ -17,9 +17,7 @@ public class LinearSearchTest {
         int actual = SearchUtilities.linearSearch(array, numberToFind);
         int expected = 4;
 
-        if (actual != expected) {
-            throw new AssertionError("Algo does not work properly");
-        }
+        AssertUtilities.assertEquals(actual, expected);
 
         System.out.println("Test 1 is pass");
     }
@@ -31,9 +29,7 @@ public class LinearSearchTest {
         int actual = SearchUtilities.linearSearch(array, numberToFind);
         int expected = 11;
 
-        if (actual != expected) {
-            throw new AssertionError("Algo does not work properly");
-        }
+        AssertUtilities.assertEquals(actual, expected);
 
         System.out.println("Test 2 is pass");
     }
@@ -45,9 +41,7 @@ public class LinearSearchTest {
         int actual = SearchUtilities.linearSearch(array, numberToFind);
         int expected = -1;
 
-        if (actual != expected) {
-            throw new AssertionError("Algo does not work properly");
-        }
+        AssertUtilities.assertEquals(actual, expected);
 
         System.out.println("Test 3 is pass");
     }
@@ -59,9 +53,7 @@ public class LinearSearchTest {
         int actual = SearchUtilities.linearSearch(array, numberToFind);
         int expected = -1;
 
-        if (actual != expected) {
-            throw new AssertionError("Algo does not work properly");
-        }
+        AssertUtilities.assertEquals(actual, expected);
 
         System.out.println("Test 4 is pass");
     }
@@ -73,9 +65,7 @@ public class LinearSearchTest {
         int actual = SearchUtilities.linearSearch(array, numberToFind);
         int expected = -1;
 
-        if (actual != expected) {
-            throw new AssertionError("Algo does not work properly");
-        }
+        AssertUtilities.assertEquals(actual, expected);
 
         System.out.println("Test 5 is pass");
     }
@@ -87,9 +77,7 @@ public class LinearSearchTest {
         int actual = SearchUtilities.linearSearch(array, numberToFind);
         int expected = 5;
 
-        if (actual != expected) {
-            throw new AssertionError("Algo does not work properly");
-        }
+        AssertUtilities.assertEquals(actual, expected);
 
         System.out.println("Test 6 is pass");
     }
