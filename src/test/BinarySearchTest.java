@@ -1,3 +1,8 @@
+package test;
+
+import main.AssertUtilities;
+import main.SearchUtilities;
+
 public class BinarySearchTest {
     public static void main(String[] args) {
         test1();

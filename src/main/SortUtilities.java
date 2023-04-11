@@ -1,21 +1,6 @@
+package main;
+
 public class SortUtilities {
-    public static void main(String[] args) {
-
-        int[] array1 = {7, 26, 6, 8, 32, 18, 115, 9, 1, 21, 2};
-        int[] array2 = {333, 26, 123, 8, 222, 18, 115, 777, 1, 21, 2};
-        int[] array3 = {3, 26, 6, 464, 32, 555, 115, 9, 1, 78, 2};
-        int[] array4 = {3, 26, 444, 464, 32, 26, 999, 115, 0, 666, 0, 2};
-
-        int[] sortedArray1 = bubbleSort(array1);
-        int[] sortedArray2 = selectionSort(array2);
-        int[] sortedArray3 = insertionSort_v1(array3);
-        int[] sortedArray4 = insertionSort(array4);
-
-        printArray(sortedArray1);
-        printArray(sortedArray2);
-        printArray(sortedArray3);
-        printArray(sortedArray4);
-    }
 
     /**
      * BabbleSort

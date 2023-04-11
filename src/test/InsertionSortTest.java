@@ -1,4 +1,7 @@
-import java.util.Arrays;
+package test;
+
+import main.AssertUtilities;
+import main.SortUtilities;
 
 public class InsertionSortTest {
     public static void main(String[] args) {

@@ -1,3 +1,5 @@
+package main;
+
 public class Functional {
     public static void main(String[] args) {
         int a = sum(5, 6);

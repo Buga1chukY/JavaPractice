@@ -1,3 +1,8 @@
+package test;
+
+import main.AssertUtilities;
+import main.SearchUtilities;
+
 public class LinearSearchTest {
     public static void main(String[] args) {
         test1();
@@ -6,7 +11,6 @@ public class LinearSearchTest {
         test4();
         test5();
         test6();
-
     }
 
 

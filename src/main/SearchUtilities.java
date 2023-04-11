@@ -1,21 +1,6 @@
+package main;
+
 public class SearchUtilities {
-    public static void main(String[] args) {
-
-        int[] array1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
-
-        int numberToFind = 10;
-        int idx = binarySearch(array1, numberToFind);
-        System.out.print("Binary Search Result: ");
-        printSearchResult(numberToFind, idx);
-
-
-        int linearNumberToFind = 20;
-        int idxLinear = linearSearch(array1, linearNumberToFind);
-        System.out.print("Linear Search Result: ");
-        printSearchResult(linearNumberToFind, idxLinear);
-
-
-    }
 
     /**
      * PrintSearchResult
