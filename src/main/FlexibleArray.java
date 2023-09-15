@@ -1,90 +1,35 @@
 package main;
 
+import main.oop_practice.FlexArray;
 import java.util.Arrays;
 
 public class FlexibleArray {
 
-    static int countElement = 0;
-    static int[] arrayS = new int[5];
-
-
     public static void main(String[] args) {
 
-        int elementsCount = 10;
-        int[] array10 = new int[elementsCount];
+        FlexArray flexArray = new FlexArray();
+        int elementsCount = 11;
+        int[] inputArray = new int[elementsCount];
+
         for (int i = 0; i < elementsCount; i++) {
-            array10[i] = i;
+            inputArray[i] = i + 1;
         }
 
-        for (int i = 0; i < array10.length; i++) {
-            int currentElement = array10[i];
-            addElemnt(currentElement);
+        String output = Arrays.toString(inputArray);
+        System.out.println(output);
+
+        for (int i = 0; i < inputArray.length; i++) {
+            int currentElement = inputArray[i];
+            flexArray.addElemnt(currentElement);
         }
-        print();
+        flexArray.print();
 
-
-        int currentElement = 0;
-        subtractElement(currentElement);
-        print();
+        int removedElement = flexArray.subtractElement();
+        System.out.println(removedElement);
+        flexArray.print();
 
     }
 
-    /**
-     * AddElementFunction
-     */
-    public static void addElemnt(int element) {
-
-        int arraySize = arrayS.length;
-        if (arraySize == countElement) {
-
-            int newSize = arraySize * 2;
-            int[] newArray = new int[newSize];
-
-            for (int j = 0; j < arrayS.length; j++) {
-                newArray[j] = arrayS[j];
-            }
-            arrayS = newArray;
-            arrayS[countElement] = element;
-            countElement++;
-        } else {
-            arrayS[countElement] = element;
-            countElement++;
-        }
-
-    }
-
-    /**
-     * SubtractElementFunction
-     */
-    public static void subtractElement(int element) {
-        int arraySize = arrayS.length;
-        countElement--;
-
-        for (int i = arrayS.length; i > 0; i--) {
-            if (countElement + 1 == (double) arrayS.length / 2) {
-                int newSize = arraySize / 2;
-                int[] newArray = new int[newSize];
-
-                for (int j = 0; j < newArray.length; j++) {
-                    newArray[j] = arrayS[j];
-                }
-                arrayS = newArray;
-                arrayS[countElement] = element;
-            } else {
-                arrayS[countElement] = element;
-                countElement--;
-            }
-        }
-
-    }
-
-    /**
-     * PrintArrayFunction
-     */
-    public static void print() {
-        String array1 = Arrays.toString(arrayS);
-        System.out.println(array1);
-    }
 }
 
 
