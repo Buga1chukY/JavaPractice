@@ -1,6 +1,7 @@
 package main;
 
 import main.oop_practice.FlexArray;
+
 import java.util.Arrays;
 
 public class FlexibleArray {
@@ -26,6 +27,10 @@ public class FlexibleArray {
 
         int removedElement = flexArray.subtractElement();
         System.out.println(removedElement);
+        flexArray.print();
+
+        int removedFirstElement = flexArray.subtractFirstElement();
+        System.out.println(removedFirstElement);
         flexArray.print();
 
     }

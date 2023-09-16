@@ -53,11 +53,39 @@ public class FlexArray {
             for (int i = 0; i < countElement; i++) {
                 newArray[i] = dynamicArray[i];
             }
-
             dynamicArray = newArray;
         }
 
         return lastElement;
+    }
+
+    /**
+     * SubtractFirstElementFunction
+     */
+    public int subtractFirstElement() {
+        int firstElement = dynamicArray[0];
+        int arraySize = dynamicArray.length;
+        int emptyPlaces = arraySize - countElement;
+        int half = arraySize / 2;
+
+        if (emptyPlaces >= half) {
+            int[] newArray = new int[half];
+
+            for (int i = 1; i < countElement; i++) {
+                newArray[i - 1] = dynamicArray[i];
+            }
+            dynamicArray = newArray;
+        } else {
+            int[] newArray = new int[dynamicArray.length];
+
+            for (int i = 1; i < countElement; i++) {
+                newArray[i - 1] = dynamicArray[i];
+            }
+            dynamicArray = newArray;
+        }
+
+        countElement--;
+        return firstElement;
     }
 
     /**
@@ -76,5 +104,4 @@ public class FlexArray {
         System.out.println(output);
     }
 
-    //Сделать функцию, которая удаляет элементы с начала массива.
 }
