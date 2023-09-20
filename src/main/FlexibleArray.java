@@ -4,6 +4,8 @@ import main.oop_practice.FlexArray;
 
 import java.util.Arrays;
 
+import main.Queue;
+
 public class FlexibleArray {
 
     public static void main(String[] args) {
@@ -32,6 +34,16 @@ public class FlexibleArray {
         int removedFirstElement = flexArray.subtractFirstElement();
         System.out.println(removedFirstElement);
         flexArray.print();
+
+        Queue queue = new Queue();
+        int[] array = new int[10];
+        for (int i = 0; i < array.length; i++) {
+            queue.addElemnt(i + 1);
+        }
+
+        int removedFirstEl = queue.subtractFirstElement();
+        System.out.println(removedFirstEl);
+        queue.print();
 
     }
 

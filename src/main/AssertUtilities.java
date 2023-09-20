@@ -22,4 +22,16 @@ public class AssertUtilities {
             throw new AssertionError(message);
         }
     }
+
+    public static void assertEquals(String actual, String expected) {
+        if (!actual.equals(expected)) {
+            String messageFormat = "\n\nActual does not equal to expected:\nActual = %s\nExpected = %s\n";
+            String message = String.format(messageFormat, actual, expected);
+            throw new AssertionError(message);
+        }
+    }
+
+    public static void fail() {
+        throw new AssertionError();
+    }
 }
