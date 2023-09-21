@@ -41,7 +41,7 @@ public class FlexibleArray {
             queue.addElemnt(i + 1);
         }
 
-        int removedFirstEl = queue.subtractFirstElement();
+        int removedFirstEl = queue.poll();
         System.out.println(removedFirstEl);
         queue.print();
 

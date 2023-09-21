@@ -7,6 +7,13 @@ public class Queue {
     private int countElement = 0;
     private int[] dynamicArray = new int[INITIAL_SIZE];
 
+    public static Queue createQueue(int initialSize) {
+        Queue queue = new Queue();
+        queue.dynamicArray = new int[initialSize];
+
+        return queue;
+    }
+
     /**
      * AddElementFunction
      */
@@ -33,11 +40,15 @@ public class Queue {
     /**
      * SubtractFirstElementFunction
      */
-    public int subtractFirstElement() {
+    public int poll() {
         int firstElement = dynamicArray[0];
         int arraySize = dynamicArray.length;
         int emptyPlaces = arraySize - countElement;
         int half = arraySize / 2;
+
+        if (countElement - 1 < 0) {
+            throw new IllegalStateException("Queue is empty");
+        }
 
         if (emptyPlaces >= half) {
             int[] newArray = new int[half];
@@ -60,6 +71,13 @@ public class Queue {
     }
 
     /**
+     * PeekFunction
+     */
+    public int peek() {
+        return dynamicArray[0];
+    }
+
+    /**
      * PrintArrayFunction
      */
     public void print() {
@@ -73,6 +91,20 @@ public class Queue {
             }
         }
         System.out.println(output);
+    }
+
+    /**
+     * GetCountElementFunction
+     */
+    public int getCountElement() {
+        return countElement;
+    }
+
+    /**
+     * GetArraySize
+     */
+    public int getSize() {
+        return dynamicArray.length;
     }
 
 }
