@@ -1,60 +1,54 @@
-package test;
+package main.FlexibleArray.Queue.Test;
 
-import main.AssertUtilities;
-import main.Queue;
+import main.FlexibleArray.Queue.Queue;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class QueueTest {
-    public static void main(String[] args) {
-        test1();
-        test2();
-        test3();
-        test4();
-        test5();
-        test6();
-        test7();
-        test8();
-        test9();
-        test10();
-    }
 
-    private static void test1() {
+    @Test
+    public void test1() {
         Queue queue = new Queue();
 
         int expect = 0;
         int actual = queue.getCountElement();
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
-    private static void test2() {
+    @Test
+    public void test2() {
         Queue queue = new Queue();
 
         int actual = queue.getSize();
         int expect = 5;
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
-    private static void test3() {
+    @Test
+    public void test3() {
         Queue queue = Queue.createQueue(30);
 
         int actual = queue.getSize();
         int expect = 30;
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
-    private static void test4() {
+    @Test
+    public void test4() {
         Queue queue = Queue.createQueue(5);
         queue.addElemnt(7);
 
         int actual = queue.getSize();
         int expect = 5;
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
-    private static void test5() {
+    @Test
+    public void test5() {
         Queue queue = Queue.createQueue(5);
 
         for (int i = 0; i < 6; i++) {
@@ -64,10 +58,11 @@ public class QueueTest {
         int actual = queue.getSize();
         int expect = 10;
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
-    private static void test6() {
+    @Test
+    public void test6() {
         Queue queue = Queue.createQueue(5);
 
         for (int i = 0; i < 5; i++) {
@@ -77,10 +72,11 @@ public class QueueTest {
         int actual = queue.poll();
         int expect = 1;
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
-    private static void test7() {
+    @Test
+    public void test7() {
         Queue queue = Queue.createQueue(5);
 
         for (int i = 0; i < 5; i++) {
@@ -90,10 +86,11 @@ public class QueueTest {
         int actual = queue.peek();
         int expect = 1;
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
-    private static void test8() {
+    @Test
+    public void test8() {
         Queue queue = Queue.createQueue(5);
 
         for (int i = 0; i < 100; i++) {
@@ -106,10 +103,11 @@ public class QueueTest {
         int actual = queue.getSize();
         int expect = 1;
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
-    private static void test9() {
+    @Test
+    public void test9() {
         Queue queue = Queue.createQueue(5);
 
         for (int i = 0; i < 100; i++) {
@@ -132,12 +130,13 @@ public class QueueTest {
         int actualFirstElement = queue.peek();
         int expectedFirstElement = 1;
 
-        AssertUtilities.assertEquals(actualSize, expectSize);
-        AssertUtilities.assertEquals(actualElementsCount, expectedElementsCount);
-        AssertUtilities.assertEquals(actualFirstElement, expectedFirstElement);
+        Assertions.assertEquals(actualSize, expectSize);
+        Assertions.assertEquals(actualElementsCount, expectedElementsCount);
+        Assertions.assertEquals(actualFirstElement, expectedFirstElement);
     }
 
-    private static void test10() {
+    @Test
+    public void test10() {
         Queue queue = Queue.createQueue(5);
 
         String actual = "";
@@ -145,12 +144,12 @@ public class QueueTest {
 
         try {
             queue.poll();
-            AssertUtilities.fail();
+            Assertions.fail();
         } catch (IllegalStateException e) {
             actual = e.getMessage();
         }
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
 }

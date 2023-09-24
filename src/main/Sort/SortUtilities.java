@@ -1,4 +1,4 @@
-package main;
+package main.Sort;
 
 public class SortUtilities {
 

@@ -1,4 +1,4 @@
-package main.time_complexity;
+package main.Search.time_complexity;
 
 public class SearchUtilitiesWithTimeComplexity {
 

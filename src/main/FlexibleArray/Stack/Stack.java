@@ -1,14 +1,20 @@
-package main.oop_practice;
+package main.FlexibleArray.Stack;
 
-public class FlexArray {
+public class Stack {
 
-    private final static int INITIAL_SIZE = 5;
+    private final static int INITIAL_SIZE = 10;
 
     private int countElement = 0;
     private int[] dynamicArray = new int[INITIAL_SIZE];
 
-    public int getCountElement() {
-        return countElement;
+    /**
+     * CreateStackFunction
+     */
+    public static Stack createStack(int initialSize) {
+        Stack stack = new Stack();
+        stack.dynamicArray = new int[initialSize];
+
+        return stack;
     }
 
     /**
@@ -37,7 +43,11 @@ public class FlexArray {
     /**
      * SubtractElementFunction
      */
-    public int subtractElement() {
+    public int pop() {
+        if (countElement - 1 < 0) {
+            throw new IllegalStateException("Stack is empty");
+        }
+
         int lastElementIndex = countElement - 1;
         int lastElement = dynamicArray[lastElementIndex];
         dynamicArray[lastElementIndex] = 0;
@@ -47,7 +57,7 @@ public class FlexArray {
         int emptyPlaces = arraySize - countElement;
         int half = arraySize / 2;
 
-        if (emptyPlaces >= half) {
+        if (emptyPlaces > half) {
             int[] newArray = new int[half];
 
             for (int i = 0; i < countElement; i++) {
@@ -57,35 +67,6 @@ public class FlexArray {
         }
 
         return lastElement;
-    }
-
-    /**
-     * SubtractFirstElementFunction
-     */
-    public int subtractFirstElement() {
-        int firstElement = dynamicArray[0];
-        int arraySize = dynamicArray.length;
-        int emptyPlaces = arraySize - countElement;
-        int half = arraySize / 2;
-
-        if (emptyPlaces >= half) {
-            int[] newArray = new int[half];
-
-            for (int i = 1; i < countElement; i++) {
-                newArray[i - 1] = dynamicArray[i];
-            }
-            dynamicArray = newArray;
-        } else {
-            int[] newArray = new int[dynamicArray.length];
-
-            for (int i = 1; i < countElement; i++) {
-                newArray[i - 1] = dynamicArray[i];
-            }
-            dynamicArray = newArray;
-        }
-
-        countElement--;
-        return firstElement;
     }
 
     /**
@@ -103,5 +84,29 @@ public class FlexArray {
         }
         System.out.println(output);
     }
+
+    /**
+     * PeekFunction
+     */
+    public int peek() {
+        int lastElementIndex = countElement - 1;
+
+        return dynamicArray[lastElementIndex];
+    }
+
+    /**
+     * GetCountElementFunction
+     */
+    public int getCountElement() {
+        return countElement;
+    }
+
+    /**
+     * GetArraySize
+     */
+    public int getSize() {
+        return dynamicArray.length;
+    }
+
 
 }

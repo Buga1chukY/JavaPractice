@@ -1,59 +1,55 @@
-package test;
+package main.FlexibleArray.Stack.Test;
 
-import main.AssertUtilities;
-import main.Stack;
+import main.FlexibleArray.Stack.Stack;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class StackTest {
-    public static void main(String[] args) {
-        test1();
-        test2();
-        test3();
-        test4();
-        test5();
-        test6();
-        test7();
-        test8();
-        test9();
-    }
 
-    private static void test1() {
+    @Test
+    public void test1() {
         Stack stack = new Stack();
 
         int expect = 0;
         int actual = stack.getCountElement();
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
-    private static void test2() {
+    @Test
+    public void test2() {
         Stack stack = new Stack();
 
         int actual = stack.getSize();
         int expect = 10;
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
-    private static void test3() {
+    @Test
+    public void test3() {
         Stack stack = Stack.createStack(30);
 
         int actual = stack.getSize();
         int expect = 30;
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
-    private static void test4() {
+    @Test
+    public void test4() {
         Stack stack = Stack.createStack(5);
         stack.addElemnt(7);
 
         int actual = stack.getSize();
         int expect = 5;
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
-    private static void test5() {
+    @Test
+    public void test5() {
         Stack stack = Stack.createStack(5);
 
         for (int i = 0; i < 6; i++) {
@@ -63,10 +59,11 @@ public class StackTest {
         int actual = stack.getSize();
         int expect = 10;
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
-    private static void test6() {
+    @Test
+    public void test6() {
         Stack stack = Stack.createStack(5);
 
         for (int i = 0; i < 6; i++) {
@@ -76,10 +73,11 @@ public class StackTest {
         int actual = stack.peek();
         int expect = 6;
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
-    private static void test7() {
+    @Test
+    public void test7() {
         Stack stack = Stack.createStack(5);
 
         for (int i = 0; i < 100; i++) {
@@ -92,10 +90,11 @@ public class StackTest {
         int actual = stack.getSize();
         int expect = 1;
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
-    private static void test8() {
+    @Test
+    public void test8() {
         Stack stack = Stack.createStack(5);
 
         for (int i = 0; i < 100; i++) {
@@ -118,12 +117,13 @@ public class StackTest {
         int actualLastElement = stack.peek();
         int expectedLastElement = 100;
 
-        AssertUtilities.assertEquals(actualSize, expectSize);
-        AssertUtilities.assertEquals(actualElementsCount, expectedElementsCount);
-        AssertUtilities.assertEquals(actualLastElement, expectedLastElement);
+        Assertions.assertEquals(actualSize, expectSize);
+        Assertions.assertEquals(actualElementsCount, expectedElementsCount);
+        Assertions.assertEquals(actualLastElement, expectedLastElement);
     }
 
-    private static void test9() {
+    @Test
+    public void test9() {
         Stack stack = Stack.createStack(5);
 
         String actual = "";
@@ -131,12 +131,12 @@ public class StackTest {
 
         try {
             stack.pop();
-            AssertUtilities.fail();
+            Assertions.fail();
         } catch (IllegalStateException e) {
             actual = e.getMessage();
         }
 
-        AssertUtilities.assertEquals(actual, expect);
+        Assertions.assertEquals(actual, expect);
     }
 
 }

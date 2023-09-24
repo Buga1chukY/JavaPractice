@@ -1,4 +1,6 @@
-package main;
+package main.Sort;
+
+import main.Sort.SortUtilities;
 
 import java.util.Scanner;
 

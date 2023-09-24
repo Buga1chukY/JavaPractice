@@ -1,89 +1,75 @@
-package test;
+package main.Search.Test;
 
-import main.AssertUtilities;
-import main.SearchUtilities;
+import main.Search.SearchUtilities;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class LinearSearchTest {
-    public static void main(String[] args) {
-        test1();
-        test2();
-        test3();
-        test4();
-        test5();
-        test6();
-    }
 
-
-    public static void test1() {
+    @Test
+    public void test1() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
         int numberToFind = 5;
 
         int actual = SearchUtilities.linearSearch(array, numberToFind);
         int expected = 4;
 
-        AssertUtilities.assertEquals(actual, expected);
-
-        System.out.println("Test 1 is pass");
+        Assertions.assertEquals(actual, expected);
     }
 
-    public static void test2() {
+    @Test
+    public void test2() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
         int numberToFind = 20;
 
         int actual = SearchUtilities.linearSearch(array, numberToFind);
         int expected = 11;
 
-        AssertUtilities.assertEquals(actual, expected);
-
-        System.out.println("Test 2 is pass");
+        Assertions.assertEquals(actual, expected);
     }
 
-    public static void test3() {
+    @Test
+    public void test3() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
         int numberToFind = 15;
 
         int actual = SearchUtilities.linearSearch(array, numberToFind);
         int expected = -1;
 
-        AssertUtilities.assertEquals(actual, expected);
-
-        System.out.println("Test 3 is pass");
+        Assertions.assertEquals(actual, expected);
     }
 
-    public static void test4() {
+    @Test
+    public void test4() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
         int numberToFind = 0;
 
         int actual = SearchUtilities.linearSearch(array, numberToFind);
         int expected = -1;
 
-        AssertUtilities.assertEquals(actual, expected);
-
-        System.out.println("Test 4 is pass");
+        Assertions.assertEquals(actual, expected);
     }
 
-    public static void test5() {
+    @Test
+    public void test5() {
         int[] array = {};
         int numberToFind = 15;
 
         int actual = SearchUtilities.linearSearch(array, numberToFind);
         int expected = -1;
 
-        AssertUtilities.assertEquals(actual, expected);
-
-        System.out.println("Test 5 is pass");
+        Assertions.assertEquals(actual, expected);
     }
 
-    public static void test6() {
+    @Test
+    public void test6() {
         int[] array = {99, 55, 13, 18, 34, 15, 73, 89, 32, 47};
         int numberToFind = 15;
 
         int actual = SearchUtilities.linearSearch(array, numberToFind);
         int expected = 5;
 
-        AssertUtilities.assertEquals(actual, expected);
-
-        System.out.println("Test 6 is pass");
+        Assertions.assertEquals(actual, expected);
     }
 
 }

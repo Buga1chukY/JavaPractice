@@ -1,4 +1,4 @@
-package main;
+package main.Search;
 
 public class SearchUtilities {
 

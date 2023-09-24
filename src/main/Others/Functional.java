@@ -1,4 +1,4 @@
-package main;
+package main.Others;
 
 public class Functional {
 

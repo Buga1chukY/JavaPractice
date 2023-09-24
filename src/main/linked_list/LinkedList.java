@@ -1,7 +1,7 @@
 package main.linked_list;
 
 public class LinkedList {
-    Node head = new Node(10);
+    Node head;
 
     public void addFirst(int data) {
         Node firstNode = new Node(data);

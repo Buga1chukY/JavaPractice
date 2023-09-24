@@ -1,16 +1,14 @@
-package main;
-
-import main.oop_practice.FlexArray;
+package main.FlexibleArray;
 
 import java.util.Arrays;
 
-import main.Queue;
+import main.FlexibleArray.Queue.Queue;
 
-public class FlexibleArray {
+public class Main {
 
     public static void main(String[] args) {
 
-        FlexArray flexArray = new FlexArray();
+        FlexArrayUtils flexArray = new FlexArrayUtils();
         int elementsCount = 11;
         int[] inputArray = new int[elementsCount];
 

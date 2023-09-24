@@ -1,4 +1,4 @@
-package main;
+package main.FlexibleArray.Queue;
 
 public class Queue {
 
