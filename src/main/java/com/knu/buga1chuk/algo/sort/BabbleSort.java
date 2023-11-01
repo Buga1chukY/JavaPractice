@@ -9,7 +9,7 @@ public class BabbleSort {
 
         boolean isAll = false;
 
-        while (isAll == false) {
+        while (!isAll) {
 
             isAll = true;
             int firstDigit = 0;

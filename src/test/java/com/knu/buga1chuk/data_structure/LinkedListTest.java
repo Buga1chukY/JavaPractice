@@ -3,10 +3,10 @@ package com.knu.buga1chuk.data_structure;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class LinkedListTest {
+class LinkedListTest {
 
     @Test
-    public void addFirst() {
+    void addFirst() {
         LinkedList linkedList = new LinkedList();
 
         linkedList.addFirst(10);
@@ -18,7 +18,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void addLast() {
+    void addLast() {
         LinkedList linkedList = new LinkedList();
 
         for (int i = 1; i <= 10; i++) {
@@ -32,7 +32,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void linkedListLength() {
+    void linkedListLength() {
         LinkedList linkedList = new LinkedList();
 
         for (int i = 1; i <= 10; i++) {
@@ -46,7 +46,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void linkedListLength2() {
+    void linkedListLength2() {
         LinkedList linkedList = new LinkedList();
 
         for (int i = 1; i <= 10; i++) {
@@ -61,7 +61,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void removedFirstElement() {
+    void removedFirstElement() {
         LinkedList linkedList = new LinkedList();
 
         for (int i = 1; i < 10; i++) {
@@ -76,7 +76,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void removedLastElement() {
+    void removedLastElement() {
         LinkedList linkedList = new LinkedList();
         for (int i = 1; i <= 10; i++) {
             linkedList.addLast(i);
@@ -92,7 +92,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void removedTwoSameElementsFromList() {
+    void removedTwoSameElementsFromList() {
         LinkedList linkedList = new LinkedList();
 
         String expect = "There is no such element in List";
@@ -115,7 +115,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void Add10ElementsAndRemove9_SouldStayOneElement() {
+    void Add10ElementsAndRemove9_SouldStayOneElement() {
         LinkedList linkedList = new LinkedList();
         for (int i = 1; i <= 10; i++) {
             linkedList.addLast(i);
@@ -132,7 +132,7 @@ public class LinkedListTest {
     }
 
     @Test
-    public void Add10ElementAndRemove10Element_ShouldBeAException() {
+    void Add10ElementAndRemove10Element_ShouldBeAException() {
         LinkedList linkedList = new LinkedList();
 
         String expectFirstElement = "The list is empty";

@@ -1,17 +1,20 @@
 package com.knu.buga1chuk.serialzation;
 
 import com.knu.buga1chuk.serialization.Person;
-import com.knu.buga1chuk.serialization.PersonService;
+import com.knu.buga1chuk.service.PersonCsvService;
+import com.knu.buga1chuk.service.PersonService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class PersonServiceTest {
+class PersonServiceTest {
     private final PersonService personService = new PersonService();
+    private final PersonCsvService personCsvService = new PersonCsvService();
 
     @Test
-    public void shouldGetYoungestPerson1() {
+    void shouldGetYoungestPerson1() {
         List<Person> youngestPersons = new ArrayList<>();
 
         Person person1 = new Person(1, "Maga", 22, "Kyiv");
@@ -32,7 +35,7 @@ public class PersonServiceTest {
     }
 
     @Test
-    public void shouldGetYoungestPerson2() {
+    void shouldGetYoungestPerson2() {
         List<Person> youngestPersons = new ArrayList<>();
 
         Person person1 = new Person(1, "Maga", 103, "Kyiv");
@@ -53,7 +56,7 @@ public class PersonServiceTest {
     }
 
     @Test
-    public void shouldGetYoungestPersonOnDuplicate() {
+    void shouldGetYoungestPersonOnDuplicate() {
         List<Person> youngestPersons = new ArrayList<>();
 
         Person person1 = new Person(1, "Maga", 20, "Kyiv");
@@ -74,7 +77,7 @@ public class PersonServiceTest {
     }
 
     @Test
-    public void shouldGetYoungestPersonOnEmptyInput() {
+    void shouldGetYoungestPersonOnEmptyInput() {
         List<Person> youngestPersons = new ArrayList<>();
 
         List<Person> actual = personService.getYoungestPerson(youngestPersons);
@@ -84,54 +87,54 @@ public class PersonServiceTest {
     }
 
     @Test
-    public void shouldToCsvRow() {
+    void shouldToCsvRow() {
         Person person1 = new Person(1, "Maga", 20, "Kyiv");
 
         String expected = "1,Maga,20,Kyiv";
-        String actual = PersonService.toCsvRow(person1);
+        String actual = PersonCsvService.toCsvRow(person1);
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldToCsvRowWithEmptyPerson() {
+    void shouldToCsvRowWithEmptyPerson() {
         Person person1 = new Person(0, "", 0, "");
 
         String expected = "0,,0,";
-        String actual = PersonService.toCsvRow(person1);
+        String actual = PersonCsvService.toCsvRow(person1);
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldToCsvRowWithFirstNameAndLastName() {
+    void shouldToCsvRowWithFirstNameAndLastName() {
         Person person1 = new Person(3, "Yaroslav Bugaichuk", 21, "Kyiv");
 
         String expected = "3,Yaroslav Bugaichuk,21,Kyiv";
-        String actual = PersonService.toCsvRow(person1);
+        String actual = PersonCsvService.toCsvRow(person1);
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldToPerson() {
+    void shouldToPerson() {
         String person = "1,Maga,22,Kyiv";
 
         Person expected = new Person(1, "Maga", 22, "Kyiv");
-        Person actual = personService.toPerson(person);
+        Person actual = personCsvService.toPerson(person);
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldToPersonEmptyString() {
+    void shouldToPersonEmptyString() {
         String person = "";
 
         String expected = "The string is empty";
         String actual = "";
 
         try {
-            personService.toPerson(person);
+            personCsvService.toPerson(person);
         } catch (IllegalStateException e) {
             actual = e.getMessage();
         }

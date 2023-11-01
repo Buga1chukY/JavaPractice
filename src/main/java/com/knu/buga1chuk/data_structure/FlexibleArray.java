@@ -2,7 +2,7 @@ package com.knu.buga1chuk.data_structure;
 
 public class FlexibleArray {
 
-    private final static int INITIAL_SIZE = 5;
+    private static final int INITIAL_SIZE = 5;
 
     private int countElement = 0;
     private int[] dynamicArray = new int[INITIAL_SIZE];
@@ -22,9 +22,7 @@ public class FlexibleArray {
             int newSize = arraySize * 2;
             int[] newArray = new int[newSize];
 
-            for (int j = 0; j < dynamicArray.length; j++) {
-                newArray[j] = dynamicArray[j];
-            }
+            System.arraycopy(dynamicArray, 0, newArray, 0, dynamicArray.length);
             dynamicArray = newArray;
             dynamicArray[countElement] = element;
             countElement++;
@@ -50,9 +48,7 @@ public class FlexibleArray {
         if (emptyPlaces >= half) {
             int[] newArray = new int[half];
 
-            for (int i = 0; i < countElement; i++) {
-                newArray[i] = dynamicArray[i];
-            }
+            if (countElement >= 0) System.arraycopy(dynamicArray, 0, newArray, 0, countElement);
             dynamicArray = newArray;
         }
 
@@ -71,16 +67,12 @@ public class FlexibleArray {
         if (emptyPlaces >= half) {
             int[] newArray = new int[half];
 
-            for (int i = 1; i < countElement; i++) {
-                newArray[i - 1] = dynamicArray[i];
-            }
+            if (countElement - 1 >= 0) System.arraycopy(dynamicArray, 1, newArray, 0, countElement - 1);
             dynamicArray = newArray;
         } else {
             int[] newArray = new int[dynamicArray.length];
 
-            for (int i = 1; i < countElement; i++) {
-                newArray[i - 1] = dynamicArray[i];
-            }
+            if (countElement - 1 >= 0) System.arraycopy(dynamicArray, 1, newArray, 0, countElement - 1);
             dynamicArray = newArray;
         }
 

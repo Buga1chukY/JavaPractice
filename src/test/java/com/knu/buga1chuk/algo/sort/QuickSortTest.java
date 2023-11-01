@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
-public class QuickSortTest {
+class QuickSortTest {
 
     @Test
-    public void test1() {
+    void test1() {
         int[] unsortedArray = {1, 3, 2, 20, 5, 7, 6, 8, 9, 10, 11, 4};
 
         int[] actualArray = QuickSort.quickSort(unsortedArray, 0, unsortedArray.length - 1);
@@ -17,7 +17,7 @@ public class QuickSortTest {
     }
 
     @Test
-    public void test2() {
+    void test2() {
         int[] unsortedArray = {1, 3, 2, 20, 5, 7, 6, 8, 9, 6, 10, 11, 4};
 
         int[] actualArray = QuickSort.quickSort(unsortedArray, 0, unsortedArray.length - 1);
@@ -27,7 +27,7 @@ public class QuickSortTest {
     }
 
     @Test
-    public void test3() {
+    void test3() {
         int[] unsortedArray = {1, 3, 2, 20, 5, 7, 6, 8, 9, 6, 10, 0, 11, 4};
 
         int[] actualArray = QuickSort.quickSort(unsortedArray, 0, unsortedArray.length - 1);
@@ -37,7 +37,7 @@ public class QuickSortTest {
     }
 
     @Test
-    public void test4() {
+    void test4() {
         int[] unsortedArray = {};
 
         int[] actualArray = QuickSort.quickSort(unsortedArray, 0, unsortedArray.length - 1);
@@ -47,7 +47,7 @@ public class QuickSortTest {
     }
 
     @Test
-    public void test5() {
+    void test5() {
         int[] unsortedArray = {0, 0, 0, 0, 0, 0};
 
         int[] actualArray = QuickSort.quickSort(unsortedArray, 0, unsortedArray.length - 1);
@@ -57,7 +57,7 @@ public class QuickSortTest {
     }
 
     @Test
-    public void test6() {
+    void test6() {
         int[] unsortedArray = {0, 1, 5, -4, 9, 7};
 
         int[] actualArray = QuickSort.quickSort(unsortedArray, 0, unsortedArray.length - 1);

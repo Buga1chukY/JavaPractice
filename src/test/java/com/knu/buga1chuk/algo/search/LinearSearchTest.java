@@ -3,10 +3,10 @@ package com.knu.buga1chuk.algo.search;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class LinearSearchTest {
+class LinearSearchTest {
 
     @Test
-    public void test1() {
+    void test1() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
         int numberToFind = 5;
 
@@ -17,7 +17,7 @@ public class LinearSearchTest {
     }
 
     @Test
-    public void test2() {
+    void test2() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
         int numberToFind = 20;
 
@@ -28,7 +28,7 @@ public class LinearSearchTest {
     }
 
     @Test
-    public void test3() {
+    void test3() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
         int numberToFind = 15;
 
@@ -39,7 +39,7 @@ public class LinearSearchTest {
     }
 
     @Test
-    public void test4() {
+    void test4() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
         int numberToFind = 0;
 
@@ -50,7 +50,7 @@ public class LinearSearchTest {
     }
 
     @Test
-    public void test5() {
+    void test5() {
         int[] array = {};
         int numberToFind = 15;
 
@@ -61,7 +61,7 @@ public class LinearSearchTest {
     }
 
     @Test
-    public void test6() {
+    void test6() {
         int[] array = {99, 55, 13, 18, 34, 15, 73, 89, 32, 47};
         int numberToFind = 15;
 
