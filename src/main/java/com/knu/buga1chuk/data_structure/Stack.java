@@ -2,7 +2,7 @@ package com.knu.buga1chuk.data_structure;
 
 public class Stack {
 
-    private final static int INITIAL_SIZE = 10;
+    private static final int INITIAL_SIZE = 10;
 
     private int countElement = 0;
     private int[] dynamicArray = new int[INITIAL_SIZE];
@@ -28,9 +28,7 @@ public class Stack {
             int newSize = arraySize * 2;
             int[] newArray = new int[newSize];
 
-            for (int j = 0; j < dynamicArray.length; j++) {
-                newArray[j] = dynamicArray[j];
-            }
+            System.arraycopy(dynamicArray, 0, newArray, 0, dynamicArray.length);
             dynamicArray = newArray;
             dynamicArray[countElement] = element;
             countElement++;
@@ -60,9 +58,7 @@ public class Stack {
         if (emptyPlaces > half) {
             int[] newArray = new int[half];
 
-            for (int i = 0; i < countElement; i++) {
-                newArray[i] = dynamicArray[i];
-            }
+            System.arraycopy(dynamicArray, 0, newArray, 0, countElement);
             dynamicArray = newArray;
         }
 

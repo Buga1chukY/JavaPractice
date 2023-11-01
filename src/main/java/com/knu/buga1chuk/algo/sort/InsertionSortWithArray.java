@@ -20,11 +20,11 @@ public class InsertionSortWithArray {
             array2[counter] = array[i];
             counter = 0;
         }
-        
-            for (int j = 0; j < array2.length; j++) {
-                System.out.print(array[j] + " ");
-            }
-            System.out.println();
+
+        for (int j = 0; j < array2.length; j++) {
+            System.out.print(array[j] + " ");
+        }
+        System.out.println();
 
     }
 

@@ -3,10 +3,10 @@ package com.knu.buga1chuk.algo.search;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class BinarySearchTest {
+class BinarySearchTest {
 
     @Test
-    public void test1() {
+    void test1() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
         int numberToFind = 5;
 
@@ -17,7 +17,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void test2() {
+    void test2() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
         int numberToFind = 20;
 
@@ -28,7 +28,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void test3() {
+    void test3() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
         int numberToFind = 1;
 
@@ -39,7 +39,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void test4() {
+    void test4() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
         int numberToFind = 2;
 
@@ -50,7 +50,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void test5() {
+    void test5() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
         int numberToFind = 0;
 
@@ -61,7 +61,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void test6() {
+    void test6() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
         int numberToFind = 21;
 
@@ -72,7 +72,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void test7() {
+    void test7() {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
         int numberToFind = 12;
 
@@ -83,7 +83,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void test8() {
+    void test8() {
         int[] array = {};
         int numberToFind = 12;
 

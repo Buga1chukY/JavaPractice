@@ -3,10 +3,10 @@ package com.knu.buga1chuk.data_structure;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class QueueTest {
+class QueueTest {
 
     @Test
-    public void test1() {
+    void test1() {
         Queue queue = new Queue();
 
         int expect = 0;
@@ -16,7 +16,7 @@ public class QueueTest {
     }
 
     @Test
-    public void test2() {
+    void test2() {
         Queue queue = new Queue();
 
         int actual = queue.getSize();
@@ -26,7 +26,7 @@ public class QueueTest {
     }
 
     @Test
-    public void test3() {
+    void test3() {
         Queue queue = Queue.createQueue(30);
 
         int actual = queue.getSize();
@@ -36,7 +36,7 @@ public class QueueTest {
     }
 
     @Test
-    public void test4() {
+    void test4() {
         Queue queue = Queue.createQueue(5);
         queue.addElemnt(7);
 
@@ -47,7 +47,7 @@ public class QueueTest {
     }
 
     @Test
-    public void test5() {
+    void test5() {
         Queue queue = Queue.createQueue(5);
 
         for (int i = 0; i < 6; i++) {
@@ -61,7 +61,7 @@ public class QueueTest {
     }
 
     @Test
-    public void test6() {
+    void test6() {
         Queue queue = Queue.createQueue(5);
 
         for (int i = 0; i < 5; i++) {
@@ -75,7 +75,7 @@ public class QueueTest {
     }
 
     @Test
-    public void test7() {
+    void test7() {
         Queue queue = Queue.createQueue(5);
 
         for (int i = 0; i < 5; i++) {
@@ -89,7 +89,7 @@ public class QueueTest {
     }
 
     @Test
-    public void test8() {
+    void test8() {
         Queue queue = Queue.createQueue(5);
 
         for (int i = 0; i < 100; i++) {
@@ -106,7 +106,7 @@ public class QueueTest {
     }
 
     @Test
-    public void test9() {
+    void test9() {
         Queue queue = Queue.createQueue(5);
 
         for (int i = 0; i < 100; i++) {
@@ -135,7 +135,7 @@ public class QueueTest {
     }
 
     @Test
-    public void test10() {
+    void test10() {
         Queue queue = Queue.createQueue(5);
 
         String actual = "";

@@ -2,6 +2,17 @@ package com.knu.buga1chuk.others;
 
 public class Functional {
 
+    public static void main(String[] args) {
+        Functional a = new Functional();
+        a.method1();
+        a.mothod2();
+        a.method3("Yaroslav");
+        a.method4("lol", "olo");
+        a.method5("hello", "world", "!!!");
+        a.method6(3, 3.5, '$', "Hello");
+        a.method7(true, "Hi", 1.5f, 123456);
+    }
+
     public void method1() {
         System.out.println("method1");
     }
@@ -29,17 +40,6 @@ public class Functional {
 
     public void method7(boolean param1, String param2, float param3, long param4) {
         System.out.println("method7");
-    }
-
-    public static void main(String[] args) {
-        Functional a = new Functional();
-        a.method1();
-        a.mothod2();
-        a.method3("Yaroslav");
-        a.method4("lol", "olo");
-        a.method5("hello", "world", "!!!");
-        a.method6(3, 3.5, '$', "Hello");
-        a.method7(true, "Hi", 1.5f, 123456);
     }
 
 }

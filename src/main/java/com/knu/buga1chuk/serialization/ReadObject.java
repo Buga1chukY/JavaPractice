@@ -4,11 +4,12 @@ import java.io.*;
 
 public class ReadObject {
 
-    private final static String PEOPLE_DATA = "people.bin";
+    private static final String PEOPLE_DATA_FILE_PATH = "target/people.bin";
 
     public static void main(String[] args) {
+        File file = new File(PEOPLE_DATA_FILE_PATH);
 
-        try (FileInputStream fis = new FileInputStream(PEOPLE_DATA);
+        try (FileInputStream fis = new FileInputStream(file);
              ObjectInputStream ois = new ObjectInputStream(fis)) {
 
             Person person1 = (Person) ois.readObject();

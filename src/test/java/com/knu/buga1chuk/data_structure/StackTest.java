@@ -3,10 +3,10 @@ package com.knu.buga1chuk.data_structure;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class StackTest {
+class StackTest {
 
     @Test
-    public void test1() {
+    void test1() {
         Stack stack = new Stack();
 
         int expect = 0;
@@ -16,7 +16,7 @@ public class StackTest {
     }
 
     @Test
-    public void test2() {
+    void test2() {
         Stack stack = new Stack();
 
         int actual = stack.getSize();
@@ -26,7 +26,7 @@ public class StackTest {
     }
 
     @Test
-    public void test3() {
+    void test3() {
         Stack stack = Stack.createStack(30);
 
         int actual = stack.getSize();
@@ -36,7 +36,7 @@ public class StackTest {
     }
 
     @Test
-    public void test4() {
+    void test4() {
         Stack stack = Stack.createStack(5);
         stack.addElemnt(7);
 
@@ -47,7 +47,7 @@ public class StackTest {
     }
 
     @Test
-    public void test5() {
+    void test5() {
         Stack stack = Stack.createStack(5);
 
         for (int i = 0; i < 6; i++) {
@@ -61,7 +61,7 @@ public class StackTest {
     }
 
     @Test
-    public void test6() {
+    void test6() {
         Stack stack = Stack.createStack(5);
 
         for (int i = 0; i < 6; i++) {
@@ -75,7 +75,7 @@ public class StackTest {
     }
 
     @Test
-    public void test7() {
+    void test7() {
         Stack stack = Stack.createStack(5);
 
         for (int i = 0; i < 100; i++) {
@@ -92,7 +92,7 @@ public class StackTest {
     }
 
     @Test
-    public void test8() {
+    void test8() {
         Stack stack = Stack.createStack(5);
 
         for (int i = 0; i < 100; i++) {
@@ -121,7 +121,7 @@ public class StackTest {
     }
 
     @Test
-    public void test9() {
+    void test9() {
         Stack stack = Stack.createStack(5);
 
         String actual = "";
