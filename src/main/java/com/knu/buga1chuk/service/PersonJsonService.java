@@ -1,8 +1,8 @@
 package com.knu.buga1chuk.service;
 
 import com.google.gson.Gson;
-import com.knu.buga1chuk.serialization.Person;
-import com.knu.buga1chuk.serialization.PersonList;
+import com.knu.buga1chuk.model.Person;
+import com.knu.buga1chuk.model.PersonList;
 
 import java.io.*;
 import java.util.List;

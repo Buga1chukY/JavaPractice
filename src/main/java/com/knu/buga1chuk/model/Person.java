@@ -1,4 +1,4 @@
-package com.knu.buga1chuk.serialization;
+package com.knu.buga1chuk.model;
 
 import java.io.Serializable;
 import java.util.Objects;

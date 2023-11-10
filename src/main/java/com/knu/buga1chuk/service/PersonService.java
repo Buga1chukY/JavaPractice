@@ -1,24 +1,21 @@
 package com.knu.buga1chuk.service;
 
-import com.knu.buga1chuk.serialization.Person;
+import com.knu.buga1chuk.model.Person;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PersonService {
+    private final PersonGenerator personGenerator = new PersonGenerator();
 
-    public List<Person> getAllPersons() {
+    public List<Person> getAllPersons(int numberOfPersons) {
         List<Person> persons = new ArrayList<>();
 
-        Person person1 = new Person(1, "Maga", 22, "Kyiv");
-        Person person2 = new Person(2, "Sasha", 21, "Kyiv");
-        Person person3 = new Person(3, "Tima", 20, "Kyiv");
-        Person person4 = new Person(4, "Yarik", 19, "Kyiv");
+        for (int i = 0; i < numberOfPersons; i++) {
+            Person person = personGenerator.getRandomPerson();
 
-        persons.add(person1);
-        persons.add(person2);
-        persons.add(person3);
-        persons.add(person4);
+            persons.add(person);
+        }
 
         return persons;
     }

@@ -1,6 +1,6 @@
 package com.knu.buga1chuk.service;
 
-import com.knu.buga1chuk.serialization.Person;
+import com.knu.buga1chuk.model.Person;
 
 import java.io.*;
 import java.util.ArrayList;

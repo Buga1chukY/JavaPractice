@@ -1,6 +1,6 @@
 package com.knu.buga1chuk.serialzation;
 
-import com.knu.buga1chuk.serialization.Person;
+import com.knu.buga1chuk.model.Person;
 import com.knu.buga1chuk.service.PersonCsvService;
 import com.knu.buga1chuk.service.PersonService;
 import org.junit.jupiter.api.Assertions;

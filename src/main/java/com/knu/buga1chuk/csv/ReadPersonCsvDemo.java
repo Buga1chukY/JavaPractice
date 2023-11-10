@@ -1,6 +1,7 @@
 package com.knu.buga1chuk.csv;
 
-import com.knu.buga1chuk.serialization.Person;
+import com.knu.buga1chuk.constant.FilePathConstants;
+import com.knu.buga1chuk.model.Person;
 import com.knu.buga1chuk.service.PersonCsvService;
 import com.knu.buga1chuk.service.PersonService;
 
@@ -8,11 +9,10 @@ import java.io.File;
 import java.util.List;
 
 public class ReadPersonCsvDemo {
-    private static final String PEOPLE_DATA_FILE_PATH = "target/people.csv";
 
     public static void main(String[] args) {
 
-        File file = new File(PEOPLE_DATA_FILE_PATH);
+        File file = new File(FilePathConstants.PEOPLE_DATA_CSV_PATH);
 
         PersonCsvService personCsvService = new PersonCsvService();
         PersonService personService = new PersonService();
