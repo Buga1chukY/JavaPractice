@@ -1,13 +1,14 @@
 package com.knu.buga1chuk.serialization;
 
+import com.knu.buga1chuk.constant.FilePathConstants;
+import com.knu.buga1chuk.model.Person;
+
 import java.io.*;
 
 public class ReadObject {
 
-    private static final String PEOPLE_DATA_FILE_PATH = "target/people.bin";
-
     public static void main(String[] args) {
-        File file = new File(PEOPLE_DATA_FILE_PATH);
+        File file = new File(FilePathConstants.PEOPLE_DATA_BINARY_PATH);
 
         try (FileInputStream fis = new FileInputStream(file);
              ObjectInputStream ois = new ObjectInputStream(fis)) {
