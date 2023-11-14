@@ -1,4 +1,4 @@
-package com.knu.buga1chuk;
+package com.knu.buga1chuk.others;
 
 import java.util.ArrayList;
 import java.util.List;

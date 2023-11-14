@@ -1,8 +1,8 @@
-package com.knu.buga1chuk.csv;
+package com.knu.buga1chuk.serialization.csv;
 
 import com.knu.buga1chuk.constant.FilePathConstants;
 import com.knu.buga1chuk.model.Person;
-import com.knu.buga1chuk.service.PersonCsvService;
+import com.knu.buga1chuk.serialization.service.PersonCsvService;
 import com.knu.buga1chuk.service.PersonService;
 
 import java.io.File;

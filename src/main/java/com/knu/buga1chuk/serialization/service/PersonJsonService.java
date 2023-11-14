@@ -1,4 +1,4 @@
-package com.knu.buga1chuk.service;
+package com.knu.buga1chuk.serialization.service;
 
 import com.google.gson.Gson;
 import com.knu.buga1chuk.model.Person;

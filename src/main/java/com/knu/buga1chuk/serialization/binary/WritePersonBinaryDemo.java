@@ -1,8 +1,8 @@
-package com.knu.buga1chuk.binary;
+package com.knu.buga1chuk.serialization.binary;
 
 import com.knu.buga1chuk.constant.FilePathConstants;
 import com.knu.buga1chuk.model.Person;
-import com.knu.buga1chuk.service.PersonBinaryService;
+import com.knu.buga1chuk.serialization.service.PersonBinaryService;
 import com.knu.buga1chuk.service.PersonService;
 
 import java.io.File;
