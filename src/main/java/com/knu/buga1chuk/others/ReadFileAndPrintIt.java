@@ -1,4 +1,4 @@
-package com.knu.buga1chuk;
+package com.knu.buga1chuk.others;
 
 import java.io.BufferedReader;
 import java.io.File;

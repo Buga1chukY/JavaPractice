@@ -1,9 +1,9 @@
-package com.knu.buga1chuk.json;
+package com.knu.buga1chuk.serialization.json;
 
 import com.knu.buga1chuk.constant.FilePathConstants;
 import com.knu.buga1chuk.model.Person;
 import com.knu.buga1chuk.model.PersonList;
-import com.knu.buga1chuk.service.PersonJsonService;
+import com.knu.buga1chuk.serialization.service.PersonJsonService;
 import com.knu.buga1chuk.service.PersonService;
 
 import java.io.File;
