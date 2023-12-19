@@ -3,6 +3,8 @@ package com.knu.buga1chuk.service;
 import com.knu.buga1chuk.constant.FilePathConstants;
 import com.knu.buga1chuk.model.Person;
 import com.knu.buga1chuk.util.GeneratorUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -12,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonGenerator {
+
+    private static final Logger LOG = LoggerFactory.getLogger(PersonGenerator.class);
 
     private static int currentPersonId = 0;
     private static final List<String> NAMES = getNames(FilePathConstants.NAMES_DATASET_PATH);
@@ -37,7 +41,7 @@ public class PersonGenerator {
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            System.out.println("There is no such file");
+            LOG.error("There is no such file");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -55,7 +59,7 @@ public class PersonGenerator {
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            System.out.println("There is no such file");
+            LOG.error("There is no such file");
         } catch (IOException e) {
             e.printStackTrace();
         }

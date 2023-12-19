@@ -2,11 +2,14 @@ package com.knu.buga1chuk.serialization.service;
 
 import com.knu.buga1chuk.model.Person;
 import com.knu.buga1chuk.model.PersonList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.List;
 
 public class PersonBinaryService {
+    private static final Logger LOG = LoggerFactory.getLogger(PersonBinaryService.class);
 
     public void writePerson(File file, List<Person> persons) {
         PersonList personList = new PersonList(persons);
@@ -17,6 +20,7 @@ public class PersonBinaryService {
             oos.writeObject(personList);
 
         } catch (IOException e) {
+            LOG.error("An IO exception occurred while writing data to file '{}'. Details: {}", file, e.getMessage());
             e.printStackTrace();
         }
     }
@@ -33,7 +37,7 @@ public class PersonBinaryService {
             e.printStackTrace();
             throw new IllegalStateException(e);
         } catch (ClassNotFoundException e) {
-            System.out.println("There is no such class");
+            LOG.error("There is no such class. {}", e.getMessage());
             e.printStackTrace();
             throw new IllegalStateException(e);
         }

@@ -8,7 +8,6 @@ public class AnimalMain {
 
 
         Dog dog2 = new Dog("Rob");
-        //dog2.name = "James";
         dog2.dogName();
     }
 }

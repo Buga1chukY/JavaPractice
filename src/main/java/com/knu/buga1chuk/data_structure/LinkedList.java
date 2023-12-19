@@ -1,7 +1,12 @@
 package com.knu.buga1chuk.data_structure;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class LinkedList {
     Node head;
+
+    private static final Logger LOG = LoggerFactory.getLogger(LinkedList.class);
 
     public void addFirst(int data) {
         Node firstNode = new Node(data);
@@ -113,12 +118,14 @@ public class LinkedList {
     }
 
     public void print() {
+        StringBuilder output = new StringBuilder();
+
         Node currentNode = head;
         while (currentNode != null) {
-            System.out.print(currentNode.data + " ");
+            output.append(currentNode.data).append(" ");
             currentNode = currentNode.next;
         }
-        System.out.println(" ");
+        LOG.info("Output array: '{}'", output);
     }
 
     static class Node {

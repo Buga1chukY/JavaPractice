@@ -3,11 +3,14 @@ package com.knu.buga1chuk.serialization.service;
 import com.google.gson.Gson;
 import com.knu.buga1chuk.model.Person;
 import com.knu.buga1chuk.model.PersonList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.List;
 
 public class PersonJsonService {
+    private static final Logger LOG = LoggerFactory.getLogger(PersonJsonService.class);
 
     public List<Person> getPersonsFromFile(File file) {
         StringBuilder result = new StringBuilder();
@@ -19,10 +22,10 @@ public class PersonJsonService {
                 result.append(line);
             }
         } catch (FileNotFoundException e) {
-            System.out.println("File not found");
+            LOG.error("File not found");
             e.printStackTrace();
         } catch (IOException e) {
-            System.out.println("IOException");
+            LOG.error("An IO exception occurred while writing data to file '{}'. Details: {}", file, e.getMessage());
             e.printStackTrace();
         }
 
@@ -42,10 +45,10 @@ public class PersonJsonService {
 
             String messageFormat = "Data is successfully saved to file '%s'";
             String result = String.format(messageFormat, file);
-            System.out.println(result);
+            LOG.info(result);
 
         } catch (IOException e) {
-            System.out.println("IO exception");
+            LOG.error("An IO exception occurred while writing data to file '{}'. Details: {}", file, e.getMessage());
             e.printStackTrace();
         }
 

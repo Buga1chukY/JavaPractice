@@ -1,10 +1,15 @@
 package com.knu.buga1chuk.others;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class DirectoryCheck {
+    private static final Logger LOG = LoggerFactory.getLogger(DirectoryCheck.class);
+
     public static void main(String[] args) {
         String directoryPath = "test";
         String currentDirectory = System.getProperty("user.dir");
@@ -15,7 +20,7 @@ public class DirectoryCheck {
         File file = new File(directory, fileName);
 
         if (file.exists()) {
-            System.out.println("File already exist");
+            LOG.warn("File already exist");
         } else {
 
             try {
@@ -25,7 +30,7 @@ public class DirectoryCheck {
                 String messageFormat = "Error: %s;";
                 String error = e.getMessage();
                 String message = String.format(messageFormat, error);
-                System.out.println(message);
+                LOG.error(message);
             }
 
             try (FileWriter writer = new FileWriter(file)) {
@@ -35,11 +40,9 @@ public class DirectoryCheck {
                 String messageFormat = "Error: %s;";
                 String error = e.getMessage();
                 String message = String.format(messageFormat, error);
-                System.out.println(message);
+                LOG.error(message);
             }
-
-            System.out.println("File has been created and filled");
-
+            LOG.info("File has been created and filled");
         }
     }
 }

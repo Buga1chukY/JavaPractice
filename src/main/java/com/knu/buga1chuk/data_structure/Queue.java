@@ -1,6 +1,11 @@
 package com.knu.buga1chuk.data_structure;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Queue {
+
+    private static final Logger LOG = LoggerFactory.getLogger(Queue.class);
 
     private static final int INITIAL_SIZE = 5;
 
@@ -84,7 +89,7 @@ public class Queue {
                 output.append(", ");
             }
         }
-        System.out.println(output);
+        LOG.info("Output array: '{}'", output);
     }
 
     /**
