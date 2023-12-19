@@ -1,7 +1,11 @@
 package com.knu.buga1chuk.data_structure;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class FlexibleArray {
 
+    private static final Logger LOG = LoggerFactory.getLogger(FlexibleArray.class);
     private static final int INITIAL_SIZE = 5;
 
     private int countElement = 0;
@@ -93,7 +97,8 @@ public class FlexibleArray {
                 output.append(", ");
             }
         }
-        System.out.println(output);
+
+        LOG.info("Output array: '{}'", output);
     }
 
 }

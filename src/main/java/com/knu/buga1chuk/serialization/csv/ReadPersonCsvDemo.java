@@ -4,11 +4,14 @@ import com.knu.buga1chuk.constant.FilePathConstants;
 import com.knu.buga1chuk.model.Person;
 import com.knu.buga1chuk.serialization.service.PersonCsvService;
 import com.knu.buga1chuk.service.PersonService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.List;
 
 public class ReadPersonCsvDemo {
+    private static final Logger LOG = LoggerFactory.getLogger(ReadPersonCsvDemo.class);
 
     public static void main(String[] args) {
 
@@ -22,15 +25,11 @@ public class ReadPersonCsvDemo {
 
         for (Person young : youngestPersons) {
 
-            String messageFormat = "'%s' from '%s' is the youngest. (age '%d')";
-
             int age = young.getAge();
             String city = young.getCity();
             String name = young.getName();
 
-            String result = String.format(messageFormat, name, city, age);
-
-            System.out.println(result);
+            LOG.info("'{}' from '{}' is the youngest. (age '{}')", name, city, age);
         }
 
     }

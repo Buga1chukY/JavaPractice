@@ -1,6 +1,10 @@
 package com.knu.buga1chuk.data_structure;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Stack {
+    private static final Logger LOG = LoggerFactory.getLogger(Stack.class);
 
     private static final int INITIAL_SIZE = 10;
 
@@ -78,7 +82,7 @@ public class Stack {
                 output.append(", ");
             }
         }
-        System.out.println(output);
+        LOG.info("Output array: '{}'", output);
     }
 
     /**

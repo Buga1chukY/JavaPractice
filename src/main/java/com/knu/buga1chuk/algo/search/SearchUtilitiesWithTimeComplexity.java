@@ -1,6 +1,12 @@
 package com.knu.buga1chuk.algo.search;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class SearchUtilitiesWithTimeComplexity {
+
+    private static final Logger LOG = LoggerFactory.getLogger(SearchUtilitiesWithTimeComplexity.class);
+
 
     static int counterBinarySearch = 0;
     static int counterLinearSearch = 0;
@@ -10,19 +16,19 @@ public class SearchUtilitiesWithTimeComplexity {
 
         int[] array = new int[10000 + 1];
         for (int i = 1; i <= 10000; i++) {
-            //array[i] = (int) (Math.random() * 100);
             array[i] = i;
         }
 
-        int numberTofind = 5548;
+        int numberToFind = 5548;
 
-        int Indexnumber = binarySearch(array, numberTofind);
-        System.out.println("Index number: " + Indexnumber);
-        System.out.println("Time: " + counterBinarySearch);
+        int indexNumberBinarySearch = binarySearch(array, numberToFind);
+        LOG.info("Index number: {}", indexNumberBinarySearch);
+        LOG.info("Binary search took time: {}", counterBinarySearch);
 
-        int Indexnumber1 = linearSearch(array, numberTofind);
-        System.out.println("Index number: " + Indexnumber1);
-        System.out.println("Time: " + counterLinearSearch);
+        int indexNumberLinearSearch = linearSearch(array, numberToFind);
+        LOG.info("Index number: {}", indexNumberLinearSearch);
+        LOG.info("Linear search took time: {}", counterLinearSearch);
+
 
     }
 

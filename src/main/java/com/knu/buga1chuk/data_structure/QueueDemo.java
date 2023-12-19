@@ -1,6 +1,12 @@
 package com.knu.buga1chuk.data_structure;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class QueueDemo {
+
+    private static final Logger LOG = LoggerFactory.getLogger(QueueDemo.class);
+
 
     public static void main(String[] args) {
         Queue queue = new Queue();
@@ -9,8 +15,8 @@ public class QueueDemo {
             queue.addElemnt(i + 1);
         }
 
-        int removedFirstEl = queue.poll();
-        System.out.println(removedFirstEl);
+        int removedFirstElement = queue.poll();
+        LOG.info("Removed first element: '{}'", removedFirstElement);
         queue.print();
     }
 

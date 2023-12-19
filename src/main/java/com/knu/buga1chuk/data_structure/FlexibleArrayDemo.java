@@ -1,8 +1,11 @@
 package com.knu.buga1chuk.data_structure;
 
-import java.util.Arrays;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class FlexibleArrayDemo {
+    private static final Logger LOG = LoggerFactory.getLogger(FlexibleArrayDemo.class);
+
 
     public static void main(String[] args) {
 
@@ -14,21 +17,19 @@ public class FlexibleArrayDemo {
             inputArray[i] = i + 1;
         }
 
-        String output = Arrays.toString(inputArray);
-        System.out.println(output);
+        LOG.info("Input array: '{}'", inputArray);
 
-        for (int i = 0; i < inputArray.length; i++) {
-            int currentElement = inputArray[i];
-            flexArray.addElemnt(currentElement);
+        for (int number : inputArray) {
+            flexArray.addElemnt(number);
         }
         flexArray.print();
 
         int removedElement = flexArray.subtractElement();
-        System.out.println(removedElement);
+        LOG.info("Removed last element: '{}'", removedElement);
         flexArray.print();
 
         int removedFirstElement = flexArray.subtractFirstElement();
-        System.out.println(removedFirstElement);
+        LOG.info("Removed first element: '{}'", removedFirstElement);
         flexArray.print();
 
     }

@@ -4,11 +4,15 @@ import com.knu.buga1chuk.constant.FilePathConstants;
 import com.knu.buga1chuk.model.Person;
 import com.knu.buga1chuk.serialization.service.PersonJsonService;
 import com.knu.buga1chuk.service.PersonService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.List;
 
 public class ReadPersonJsonDemo {
+
+    private static final Logger LOG = LoggerFactory.getLogger(ReadPersonJsonDemo.class);
 
     public static void main(String[] args) {
         File file = new File(FilePathConstants.PEOPLE_DATA_JSON_PATH);
@@ -20,14 +24,12 @@ public class ReadPersonJsonDemo {
         List<Person> youngestPersons = personService.getYoungestPerson(persons);
 
         for (Person young : youngestPersons) {
-            String messageFormat = "'%s' from '%s' is the youngest. (age '%d')";
 
             int age = young.getAge();
             String city = young.getCity();
             String name = young.getName();
 
-            String youngestPersonMessage = String.format(messageFormat, name, city, age);
-            System.out.println(youngestPersonMessage);
+            LOG.info("'{}' from '{}' is the youngest. (age '{}')", name, city, age);
         }
     }
 }

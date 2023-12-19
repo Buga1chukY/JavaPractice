@@ -1,15 +1,17 @@
 package com.knu.buga1chuk.algo.search;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class LinearSearch {
+
+    private static final Logger LOG = LoggerFactory.getLogger(LinearSearch.class);
 
     /**
      * PrintSearchResult
      */
     public static void printSearchResult(int numberToFind, int idx) {
-        String messagePattern = "Element %d is located on index %d";
-        String result = String.format(messagePattern, numberToFind, idx);
-        System.out.println(result);
-
+        LOG.info("Element {} is located on index {}", numberToFind, idx);
     }
 
     /**
