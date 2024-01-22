@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class Person implements Serializable {
+    public static final String PERSON_FORMAT = "%d,%s,%d,%s";
+
     private final int id;
     private final String name;
     private final int age;
@@ -18,8 +20,12 @@ public class Person implements Serializable {
 
     @Override
     public String toString() {
-        String messageFormat = "%d,%s,%d,%s";
-        return String.format(messageFormat, id, name, age, city);
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", city='" + city + '\'' +
+                '}';
     }
 
     @Override

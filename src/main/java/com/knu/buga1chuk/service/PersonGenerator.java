@@ -40,10 +40,9 @@ public class PersonGenerator {
                 names.add(name);
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
             LOG.error("There is no such file");
         } catch (IOException e) {
-            e.printStackTrace();
+            LOG.error("An error occurred while reading the file: {}", e.getMessage());
         }
 
         return names;
@@ -58,10 +57,9 @@ public class PersonGenerator {
                 cities.add(city);
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
             LOG.error("There is no such file");
         } catch (IOException e) {
-            e.printStackTrace();
+            LOG.error("An error occurred while reading the cities file: {}", e.getMessage());
         }
 
         return cities;
