@@ -2,8 +2,11 @@ package com.knu.buga1chuk.serialization.csv;
 
 import com.knu.buga1chuk.constant.FilePathConstants;
 import com.knu.buga1chuk.model.Person;
-import com.knu.buga1chuk.serialization.service.PersonCsvService;
+import com.knu.buga1chuk.serialization.service.CsvPersonSerializationService;
+import com.knu.buga1chuk.serialization.service.PersonSerializationService;
 import com.knu.buga1chuk.service.PersonService;
+import com.knu.buga1chuk.util.Base64Utils;
+import com.knu.buga1chuk.util.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,10 +20,10 @@ public class ReadPersonCsvDemo {
 
         File file = new File(FilePathConstants.PEOPLE_DATA_CSV_PATH);
 
-        PersonCsvService personCsvService = new PersonCsvService();
+        PersonSerializationService personSerializationService = new CsvPersonSerializationService();
         PersonService personService = new PersonService();
 
-        List<Person> persons = personCsvService.getPersonsFromFile(file);
+        List<Person> persons = personSerializationService.getPersonListFromFile(file).getPersons();
         List<Person> youngestPersons = personService.getYoungestPerson(persons);
 
         for (Person young : youngestPersons) {
@@ -31,6 +34,10 @@ public class ReadPersonCsvDemo {
 
             LOG.info("'{}' from '{}' is the youngest. (age '{}')", name, city, age);
         }
+
+        byte[] fileBytes = FileUtils.readFileToByteArray(file);
+        String base64 = Base64Utils.toBase64String(fileBytes);
+        LOG.info("Base64 code: '{}'", base64);
 
     }
 }

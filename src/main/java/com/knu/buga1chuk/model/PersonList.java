@@ -1,7 +1,5 @@
 package com.knu.buga1chuk.model;
 
-import com.knu.buga1chuk.model.Person;
-
 import java.io.Serializable;
 import java.util.List;
 
