@@ -5,7 +5,7 @@ public class MakeTable {
         Table table = new Table();
         table.material = "wood";
         table.color = "red";
-        table.hight = 5;
+        table.height = 5;
         table.withs = 10;
         table.legs = new Leg[5];
         Leg leg = MakeLeg.createLeg();

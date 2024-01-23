@@ -19,6 +19,7 @@ public class ArrayListDemo {
         for (String str : stringList) {
             output.append(str).append(" ");
         }
-        LOG.info(String.valueOf(output));
+        String result = output.toString();
+        LOG.info(result);
     }
 }

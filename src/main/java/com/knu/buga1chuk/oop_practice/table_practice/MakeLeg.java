@@ -5,7 +5,7 @@ public class MakeLeg {
         Leg leg = new Leg();
         leg.material = "iron";
         leg.withs = 5;
-        leg.hight = 10;
+        leg.height = 10;
         return leg;
     }
 }
