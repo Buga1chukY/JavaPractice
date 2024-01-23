@@ -18,8 +18,8 @@ public class PersonGenerator {
     private static final Logger LOG = LoggerFactory.getLogger(PersonGenerator.class);
 
     private static int currentPersonId = 0;
-    private static final List<String> NAMES = getNames();
-    private static final List<String> CITIES = getCities();
+    private static final List<String> NAMES = getNames(FilePathConstants.NAMES_DATASET_PATH);
+    private static final List<String> CITIES = getCities(FilePathConstants.CITIES_DATASET_PATH);
 
     public Person getRandomPerson() {
 
@@ -31,10 +31,10 @@ public class PersonGenerator {
         return new Person(currentPersonId, name, age, city);
     }
 
-    private static List<String> getNames() {
+    private static List<String> getNames(String filePath) {
         List<String> names = new ArrayList<>();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(FilePathConstants.NAMES_DATASET_PATH))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String name;
             while ((name = reader.readLine()) != null) {
                 names.add(name);
@@ -48,10 +48,10 @@ public class PersonGenerator {
         return names;
     }
 
-    private static List<String> getCities() {
+    private static List<String> getCities(String filePath) {
         List<String> cities = new ArrayList<>();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(FilePathConstants.CITIES_DATASET_PATH))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String city;
             while ((city = reader.readLine()) != null) {
                 cities.add(city);
