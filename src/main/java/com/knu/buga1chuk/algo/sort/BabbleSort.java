@@ -1,6 +1,8 @@
 package com.knu.buga1chuk.algo.sort;
 
 public class BabbleSort {
+    private BabbleSort() {
+    }
 
     /**
      * BabbleSort
@@ -14,7 +16,7 @@ public class BabbleSort {
             isAll = true;
             int firstDigit = 0;
             int secondDigit = 1;
-            int plus = 0;
+            int plus;
 
             for (; ((secondDigit != unsortedArray.length) && (firstDigit != unsortedArray.length)); firstDigit++, secondDigit++) {
 
@@ -31,14 +33,4 @@ public class BabbleSort {
         return unsortedArray;
     }
 
-    /**
-     * PrintSortResult
-     */
-    public static void printArray(int[] array) {
-
-        for (int j = 0; j < array.length; j++) {
-            System.out.print(array[j] + " ");
-        }
-        System.out.println();
-    }
 }

@@ -22,7 +22,7 @@ public class Queue {
     /**
      * AddElementFunction
      */
-    public void addElemnt(int element) {
+    public void addElement(int element) {
 
         int arraySize = dynamicArray.length;
         if (arraySize == countElement) {

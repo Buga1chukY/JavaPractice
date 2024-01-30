@@ -38,7 +38,7 @@ class StackTest {
     @Test
     void test4() {
         Stack stack = Stack.createStack(5);
-        stack.addElemnt(7);
+        stack.addElement(7);
 
         int actual = stack.getSize();
         int expect = 5;
@@ -51,7 +51,7 @@ class StackTest {
         Stack stack = Stack.createStack(5);
 
         for (int i = 0; i < 6; i++) {
-            stack.addElemnt(i);
+            stack.addElement(i);
         }
 
         int actual = stack.getSize();
@@ -65,7 +65,7 @@ class StackTest {
         Stack stack = Stack.createStack(5);
 
         for (int i = 0; i < 6; i++) {
-            stack.addElemnt(i + 1);
+            stack.addElement(i + 1);
         }
 
         int actual = stack.peek();
@@ -79,7 +79,7 @@ class StackTest {
         Stack stack = Stack.createStack(5);
 
         for (int i = 0; i < 100; i++) {
-            stack.addElemnt(i + 1);
+            stack.addElement(i + 1);
         }
         for (int i = 100; i > 0; i--) {
             stack.pop();
@@ -96,14 +96,14 @@ class StackTest {
         Stack stack = Stack.createStack(5);
 
         for (int i = 0; i < 100; i++) {
-            stack.addElemnt(i + 1);
+            stack.addElement(i + 1);
         }
         for (int i = 100; i > 0; i--) {
             stack.pop();
         }
 
         for (int i = 0; i < 100; i++) {
-            stack.addElemnt(i + 1);
+            stack.addElement(i + 1);
         }
 
         int actualSize = stack.getSize();

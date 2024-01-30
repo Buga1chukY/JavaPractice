@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 public class FlexibleArrayDemo {
     private static final Logger LOG = LoggerFactory.getLogger(FlexibleArrayDemo.class);
 
-
     public static void main(String[] args) {
 
         FlexibleArray flexArray = new FlexibleArray();
@@ -20,7 +19,7 @@ public class FlexibleArrayDemo {
         LOG.info("Input array: '{}'", inputArray);
 
         for (int number : inputArray) {
-            flexArray.addElemnt(number);
+            flexArray.addElement(number);
         }
         flexArray.print();
 

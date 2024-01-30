@@ -7,7 +7,7 @@ class BinarySearchTest {
 
     @Test
     void test1() {
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20, 21};
         int numberToFind = 5;
 
         int actual = BinarySearch.binarySearch(array, numberToFind);
@@ -18,7 +18,7 @@ class BinarySearchTest {
 
     @Test
     void test2() {
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20, 31};
         int numberToFind = 20;
 
         int actual = BinarySearch.binarySearch(array, numberToFind);
@@ -51,7 +51,7 @@ class BinarySearchTest {
 
     @Test
     void test5() {
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20};
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20, 22};
         int numberToFind = 0;
 
         int actual = BinarySearch.binarySearch(array, numberToFind);

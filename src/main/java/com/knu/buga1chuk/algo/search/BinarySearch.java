@@ -4,6 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class BinarySearch {
+    private BinarySearch() {
+    }
 
     private static final Logger LOG = LoggerFactory.getLogger(BinarySearch.class);
 

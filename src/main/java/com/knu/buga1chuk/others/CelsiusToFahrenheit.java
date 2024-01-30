@@ -9,14 +9,14 @@ public class CelsiusToFahrenheit {
     private static final Logger LOG = LoggerFactory.getLogger(CelsiusToFahrenheit.class);
 
     public static void main(String[] args) {
-        System.out.println("What you want to do?");
-        System.out.println("1. Convert Celsius to Fahrenheit.");
-        System.out.println("2. Convert Fahrenheit to Celsius.");
+        LOG.info("What you want to do?");
+        LOG.info("1. Convert Celsius to Fahrenheit.");
+        LOG.info("2. Convert Fahrenheit to Celsius.");
 
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
 
-        System.out.println("Enter a degrees");
+        LOG.info("Enter a degrees");
         int degrees = scanner.nextInt();
 
         if (choice == 1) {

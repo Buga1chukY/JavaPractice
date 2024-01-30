@@ -38,7 +38,7 @@ class QueueTest {
     @Test
     void test4() {
         Queue queue = Queue.createQueue(5);
-        queue.addElemnt(7);
+        queue.addElement(7);
 
         int actual = queue.getSize();
         int expect = 5;
@@ -51,7 +51,7 @@ class QueueTest {
         Queue queue = Queue.createQueue(5);
 
         for (int i = 0; i < 6; i++) {
-            queue.addElemnt(i);
+            queue.addElement(i);
         }
 
         int actual = queue.getSize();
@@ -65,7 +65,7 @@ class QueueTest {
         Queue queue = Queue.createQueue(5);
 
         for (int i = 0; i < 5; i++) {
-            queue.addElemnt(i + 1);
+            queue.addElement(i + 1);
         }
 
         int actual = queue.poll();
@@ -79,7 +79,7 @@ class QueueTest {
         Queue queue = Queue.createQueue(5);
 
         for (int i = 0; i < 5; i++) {
-            queue.addElemnt(i + 1);
+            queue.addElement(i + 1);
         }
 
         int actual = queue.peek();
@@ -93,7 +93,7 @@ class QueueTest {
         Queue queue = Queue.createQueue(5);
 
         for (int i = 0; i < 100; i++) {
-            queue.addElemnt(i + 1);
+            queue.addElement(i + 1);
         }
         for (int i = 100; i > 0; i--) {
             queue.poll();
@@ -110,14 +110,14 @@ class QueueTest {
         Queue queue = Queue.createQueue(5);
 
         for (int i = 0; i < 100; i++) {
-            queue.addElemnt(i + 1);
+            queue.addElement(i + 1);
         }
         for (int i = 100; i > 0; i--) {
             queue.poll();
         }
 
         for (int i = 0; i < 100; i++) {
-            queue.addElemnt(i + 1);
+            queue.addElement(i + 1);
         }
 
         int actualSize = queue.getSize();

@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonGenerator {
+    private PersonGenerator() {
+    }
 
     private static final Logger LOG = LoggerFactory.getLogger(PersonGenerator.class);
 
@@ -21,7 +23,7 @@ public class PersonGenerator {
     private static final List<String> NAMES = getNames(FilePathConstants.NAMES_DATASET_PATH);
     private static final List<String> CITIES = getCities(FilePathConstants.CITIES_DATASET_PATH);
 
-    public Person getRandomPerson() {
+    public static Person getRandomPerson() {
 
         currentPersonId++;
         String name = GeneratorUtils.getRandomElement(NAMES);

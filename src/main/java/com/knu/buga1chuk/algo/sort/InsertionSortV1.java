@@ -1,17 +1,20 @@
 package com.knu.buga1chuk.algo.sort;
 
 public class InsertionSortV1 {
+    private InsertionSortV1() {
+    }
 
     /**
      * InsertionSort_v1
      */
     public static int[] insertionSortV1(int[] unsortedArray) {
 
-        for (int i = 0; i < unsortedArray.length; i++) {
+        int i = 0;
+        while (i < unsortedArray.length) {
             int counter = 0;
 
-            for (int j = 0; j < unsortedArray.length; j++) {
-                if (unsortedArray[i] > unsortedArray[j]) {
+            for (int j : unsortedArray) {
+                if (unsortedArray[i] > j) {
                     counter++;
                 }
             }
@@ -25,19 +28,10 @@ public class InsertionSortV1 {
                     i--;
                 }
             }
+            i++;
         }
 
         return unsortedArray;
     }
 
-    /**
-     * PrintSortResult
-     */
-    public static void printArray(int[] array) {
-
-        for (int j = 0; j < array.length; j++) {
-            System.out.print(array[j] + " ");
-        }
-        System.out.println();
-    }
 }
