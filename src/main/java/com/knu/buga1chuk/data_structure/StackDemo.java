@@ -19,6 +19,5 @@ public class StackDemo {
         int pop = stack.pop();
         LOG.info("Last element is: '{}'", pop);
 
-
     }
 }
