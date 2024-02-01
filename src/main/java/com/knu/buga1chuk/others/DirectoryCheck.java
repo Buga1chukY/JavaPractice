@@ -11,7 +11,7 @@ public class DirectoryCheck {
     private static final Logger LOG = LoggerFactory.getLogger(DirectoryCheck.class);
 
     public static void main(String[] args) {
-        String directoryPath = "test";
+        String directoryPath = "target/fileTest";
         String currentDirectory = System.getProperty("user.dir");
         File directory = new File(currentDirectory, directoryPath);
 
@@ -24,7 +24,10 @@ public class DirectoryCheck {
         } else {
 
             try {
-                file.createNewFile();
+                boolean isFileCreated = file.createNewFile();
+                if (isFileCreated) {
+                    LOG.info("File created successfully!");
+                }
 
             } catch (IOException e) {
                 String messageFormat = "Error: %s;";

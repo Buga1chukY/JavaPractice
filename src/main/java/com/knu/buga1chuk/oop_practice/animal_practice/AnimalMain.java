@@ -6,7 +6,6 @@ public class AnimalMain {
         dog.sound();
         dog.dogName();
 
-
         Dog dog2 = new Dog("Rob");
         dog2.dogName();
     }

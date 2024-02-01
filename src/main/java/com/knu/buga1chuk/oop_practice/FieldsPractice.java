@@ -16,14 +16,18 @@ public class FieldsPractice {
         point2.x = 8;
         point2.y = 10;
 
-        LOG.info("Point: '{}'", pointToString(point1));
-        LOG.info("Point: '{}'", pointToString(point2));
+        String point1S = pointToString(point1);
+        String point2S = pointToString(point1);
+
+        LOG.info("Point: '{}'", point1S);
+        LOG.info("Point: '{}'", point2S);
 
         Line line = new Line();
         line.start = point1;
         line.end = point2;
 
-        LOG.info("Line: '{}'", lineToString(line));
+        String line1S = lineToString(line);
+        LOG.info("Line: '{}'", line1S);
     }
 
     public static String pointToString(Point point) {

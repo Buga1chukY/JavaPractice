@@ -1,30 +1,29 @@
 package com.knu.buga1chuk.algo.sort;
 
-import java.util.Scanner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class InsertionSortWithArray {
+    private static final Logger LOG = LoggerFactory.getLogger(InsertionSortWithArray.class);
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
         int[] array = {7, 10, 6, 8, 3, 4, 5, 9, 1, 11, 2};
         int[] array2 = new int[array.length];
         int counter = 0;
 
-        for (int i = 0; i < array.length; i++) {
+        for (int k : array) {
 
-            for (int j = 0; j < array.length; j++) {
-                if (array[i] > array[j]) {
+            for (int i : array) {
+                if (k > i) {
                     counter++;
                 }
             }
-            array2[counter] = array[i];
+            array2[counter] = k;
             counter = 0;
         }
 
-        for (int j = 0; j < array2.length; j++) {
-            System.out.print(array[j] + " ");
-        }
-        System.out.println();
+        LOG.info("{} ", array2);
 
     }
 

@@ -1,6 +1,8 @@
 package com.knu.buga1chuk.algo.sort;
 
 public class QuickSort {
+    private QuickSort() {
+    }
 
     /**
      * QuickSort
@@ -39,14 +41,4 @@ public class QuickSort {
         return left;
     }
 
-    /**
-     * PrintSortResult
-     */
-    public static void printArray(int[] array) {
-
-        for (int j = 0; j < array.length; j++) {
-            System.out.print(array[j] + " ");
-        }
-        System.out.println();
-    }
 }

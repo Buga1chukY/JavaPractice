@@ -74,9 +74,8 @@ class BinaryPersonSerializationServiceTest {
     @Test
     void shouldToPersonListWithNull() {
         List<Person> expected = new ArrayList<>();
-        String base64 = null;
 
-        PersonList personList = binaryPersonSerializationService.toPersonList(base64);
+        PersonList personList = binaryPersonSerializationService.toPersonList(null);
         List<Person> actual = personList.getPersons();
 
         Assertions.assertEquals(expected, actual);

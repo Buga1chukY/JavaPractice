@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonService {
-    private final PersonGenerator personGenerator = new PersonGenerator();
 
     public List<Person> getAllPersons(int numberOfPersons) {
+
         List<Person> persons = new ArrayList<>();
 
         for (int i = 0; i < numberOfPersons; i++) {
-            Person person = personGenerator.getRandomPerson();
+            Person person = PersonGenerator.getRandomPerson();
 
             persons.add(person);
         }

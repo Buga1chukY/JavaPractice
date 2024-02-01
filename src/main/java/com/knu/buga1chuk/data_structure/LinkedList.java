@@ -16,8 +16,7 @@ public class LinkedList {
 
     public void addLast(int data) {
         if (head == null) {
-            Node newNode = new Node(data);
-            head = newNode;
+            head = new Node(data);
             return;
         }
 

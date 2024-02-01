@@ -60,7 +60,7 @@ public class CsvPersonSerializationService implements PersonSerializationService
 
             String[] rows = personsCsvRows.split("\n");
 
-            if (!personsCsvRows.equals("")) {
+            if (!personsCsvRows.isEmpty()) {
                 for (String personRow : rows) {
 
                     String[] parts = personRow.split(",");

@@ -3,6 +3,8 @@ package com.knu.buga1chuk.others;
 import java.util.Arrays;
 
 public class AssertUtilities {
+    private AssertUtilities() {
+    }
 
     public static void assertEquals(int[] actualArray, int[] expectedArray) {
         if (!Arrays.equals(actualArray, expectedArray)) {

@@ -1,6 +1,8 @@
 package com.knu.buga1chuk.algo.sort;
 
 public class SelectionSort {
+    private SelectionSort() {
+    }
 
     /**
      * SelectionSort
@@ -31,14 +33,4 @@ public class SelectionSort {
         return unsortedArray;
     }
 
-    /**
-     * PrintSortResult
-     */
-    public static void printArray(int[] array) {
-
-        for (int j = 0; j < array.length; j++) {
-            System.out.print(array[j] + " ");
-        }
-        System.out.println();
-    }
 }

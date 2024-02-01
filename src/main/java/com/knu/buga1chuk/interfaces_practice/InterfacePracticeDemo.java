@@ -3,9 +3,9 @@ package com.knu.buga1chuk.interfaces_practice;
 import com.knu.buga1chuk.interfaces_practice.model.Alien;
 import com.knu.buga1chuk.interfaces_practice.model.Animal;
 import com.knu.buga1chuk.interfaces_practice.model.Person;
+import com.knu.buga1chuk.interfaces_practice.service.InfoService;
 import com.knu.buga1chuk.interfaces_practice.service.impl.AlienInfoServiceImpl;
 import com.knu.buga1chuk.interfaces_practice.service.impl.AnimalInfoServiceImpl;
-import com.knu.buga1chuk.interfaces_practice.service.InfoService;
 import com.knu.buga1chuk.interfaces_practice.service.impl.PersonInfoServiceImpl;
 
 public class InterfacePracticeDemo {
@@ -31,6 +31,5 @@ public class InterfacePracticeDemo {
         personInfoService.sleep();
 
     }
-
 
 }

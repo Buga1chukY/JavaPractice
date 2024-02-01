@@ -11,14 +11,10 @@ public class FlexibleArray {
     private int countElement = 0;
     private int[] dynamicArray = new int[INITIAL_SIZE];
 
-    public int getCountElement() {
-        return countElement;
-    }
-
     /**
      * AddElementFunction
      */
-    public void addElemnt(int element) {
+    public void addElement(int element) {
 
         int arraySize = dynamicArray.length;
         if (arraySize == countElement) {
