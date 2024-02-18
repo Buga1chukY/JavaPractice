@@ -4,12 +4,21 @@ import java.util.List;
 import java.util.Random;
 
 public final class GeneratorUtils {
+    private static GeneratorUtils instance;
+
     private GeneratorUtils() {
+    }
+
+    public static GeneratorUtils getInstance() {
+        if (instance == null) {
+            instance = new GeneratorUtils();
+        }
+        return instance;
     }
 
     private static final Random RANDOM = new Random();
 
-    public static int getRandomInt(int from, int to) {
+    public int getRandomInt(int from, int to) {
         return RANDOM.nextInt(to) + from;
     }
 

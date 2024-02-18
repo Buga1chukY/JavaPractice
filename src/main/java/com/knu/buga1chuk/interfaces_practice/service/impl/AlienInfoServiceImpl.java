@@ -8,6 +8,18 @@ import org.slf4j.LoggerFactory;
 public class AlienInfoServiceImpl implements AlienInfoService {
     private static final Logger LOG = LoggerFactory.getLogger(AlienInfoServiceImpl.class);
 
+    private static AlienInfoServiceImpl instance;
+
+    public AlienInfoServiceImpl() {
+    }
+
+    public static AlienInfoServiceImpl getInstance() {
+        if (instance == null) {
+            instance = new AlienInfoServiceImpl();
+        }
+        return instance;
+    }
+
     @Override
     public void showInfo(Alien alien) {
         LOG.info("My name is: '{}'. I am from galaxy!", alien.getId());

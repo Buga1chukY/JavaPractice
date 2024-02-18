@@ -12,6 +12,17 @@ import java.util.List;
 
 public class JsonPersonSerializationService implements PersonSerializationService {
     private static final Logger LOG = LoggerFactory.getLogger(JsonPersonSerializationService.class);
+    private static JsonPersonSerializationService instance;
+
+    private JsonPersonSerializationService() {
+    }
+
+    public static JsonPersonSerializationService getInstance() {
+        if (instance == null) {
+            instance = new JsonPersonSerializationService();
+        }
+        return instance;
+    }
 
     @Override
     public void writePersonList(File file, PersonList personList) {

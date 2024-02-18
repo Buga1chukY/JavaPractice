@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 class PersonServiceTest {
-    private final PersonService personService = new PersonService();
-    private final CsvPersonSerializationService csvPersonSerializationService = new CsvPersonSerializationService();
+    public static final CsvPersonSerializationService csvPersonSerializationService = CsvPersonSerializationService.getInstance();
+    public static final PersonService personService = PersonService.getInstance();
 
     @Test
     void shouldGetYoungestPerson1() {
@@ -88,8 +88,6 @@ class PersonServiceTest {
 
     @Test
     void shouldToCsvRow() {
-        CsvPersonSerializationService csvPersonSerializationService = new CsvPersonSerializationService();
-
         List<Person> list = new ArrayList<>();
         Person person1 = new Person(1, "Maga", 20, "Kyiv");
 
@@ -105,8 +103,6 @@ class PersonServiceTest {
 
     @Test
     void shouldToCsvRowWithEmptyPerson() {
-        CsvPersonSerializationService csvPersonSerializationService = new CsvPersonSerializationService();
-
         List<Person> list = new ArrayList<>();
 
         Person person1 = new Person(0, "", 0, "");
@@ -122,7 +118,6 @@ class PersonServiceTest {
 
     @Test
     void shouldToCsvRowWithFirstNameAndLastName() {
-        CsvPersonSerializationService csvPersonSerializationService = new CsvPersonSerializationService();
         List<Person> list = new ArrayList<>();
 
         Person person1 = new Person(3, "Yaroslav Bugaichuk", 21, "Kyiv");

@@ -3,7 +3,6 @@ package com.knu.buga1chuk.serialization.csv;
 import com.knu.buga1chuk.constant.FilePathConstants;
 import com.knu.buga1chuk.model.Person;
 import com.knu.buga1chuk.serialization.service.CsvPersonSerializationService;
-import com.knu.buga1chuk.serialization.service.PersonSerializationService;
 import com.knu.buga1chuk.service.PersonService;
 import com.knu.buga1chuk.util.Base64Utils;
 import com.knu.buga1chuk.util.FileUtils;
@@ -14,16 +13,18 @@ import java.io.File;
 import java.util.List;
 
 public class ReadPersonCsvDemo {
+
     private static final Logger LOG = LoggerFactory.getLogger(ReadPersonCsvDemo.class);
+    public static final CsvPersonSerializationService csvPersonSerializationService = CsvPersonSerializationService.getInstance();
+    public static final PersonService personService = PersonService.getInstance();
+    public static final FileUtils fileUtils = FileUtils.getInstance();
+    public static final Base64Utils base64Utils = Base64Utils.getInstance();
 
     public static void main(String[] args) {
 
         File file = new File(FilePathConstants.PEOPLE_DATA_CSV_PATH);
 
-        PersonSerializationService personSerializationService = new CsvPersonSerializationService();
-        PersonService personService = new PersonService();
-
-        List<Person> persons = personSerializationService.getPersonListFromFile(file).getPersons();
+        List<Person> persons = csvPersonSerializationService.getPersonListFromFile(file).getPersons();
         List<Person> youngestPersons = personService.getYoungestPerson(persons);
 
         for (Person young : youngestPersons) {
@@ -35,8 +36,8 @@ public class ReadPersonCsvDemo {
             LOG.info("'{}' from '{}' is the youngest. (age '{}')", name, city, age);
         }
 
-        byte[] fileBytes = FileUtils.readFileToByteArray(file);
-        String base64 = Base64Utils.toBase64String(fileBytes);
+        byte[] fileBytes = fileUtils.readFileToByteArray(file);
+        String base64 = base64Utils.toBase64String(fileBytes);
         LOG.info("Base64 code: '{}'", base64);
 
     }

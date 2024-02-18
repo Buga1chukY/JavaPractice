@@ -14,26 +14,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonGenerator {
+
+    public static final PersonGenerator personGenerator = PersonGenerator.getInstance();
+    public static final GeneratorUtils generatorUtils = GeneratorUtils.getInstance();
+
+    private static PersonGenerator instance;
+
     private PersonGenerator() {
+    }
+
+    public static PersonGenerator getInstance() {
+        if (instance == null) {
+            instance = new PersonGenerator();
+        }
+        return instance;
     }
 
     private static final Logger LOG = LoggerFactory.getLogger(PersonGenerator.class);
 
     private static int currentPersonId = 0;
-    private static final List<String> NAMES = getNames(FilePathConstants.NAMES_DATASET_PATH);
-    private static final List<String> CITIES = getCities(FilePathConstants.CITIES_DATASET_PATH);
+    private static final List<String> NAMES = personGenerator.getNames(FilePathConstants.NAMES_DATASET_PATH);
+    private static final List<String> CITIES = personGenerator.getCities(FilePathConstants.CITIES_DATASET_PATH);
 
-    public static Person getRandomPerson() {
+    public Person getRandomPerson() {
 
         currentPersonId++;
         String name = GeneratorUtils.getRandomElement(NAMES);
-        int age = GeneratorUtils.getRandomInt(12, 50);
+        int age = generatorUtils.getRandomInt(12, 50);
         String city = GeneratorUtils.getRandomElement(CITIES);
 
         return new Person(currentPersonId, name, age, city);
     }
 
-    private static List<String> getNames(String filePath) {
+    private List<String> getNames(String filePath) {
         List<String> names = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
@@ -50,7 +63,7 @@ public class PersonGenerator {
         return names;
     }
 
-    private static List<String> getCities(String filePath) {
+    private List<String> getCities(String filePath) {
         List<String> cities = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {

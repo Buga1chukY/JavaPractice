@@ -11,10 +11,19 @@ import java.io.IOException;
 public final class FileUtils {
     private static final Logger LOG = LoggerFactory.getLogger(FileUtils.class);
 
+    private static FileUtils instance;
+
     private FileUtils() {
     }
 
-    public static byte[] readFileToByteArray(File file) {
+    public static FileUtils getInstance() {
+        if (instance == null) {
+            instance = new FileUtils();
+        }
+        return instance;
+    }
+
+    public byte[] readFileToByteArray(File file) {
         byte[] buffer = new byte[1024];
 
         try (FileInputStream fis = new FileInputStream(file);

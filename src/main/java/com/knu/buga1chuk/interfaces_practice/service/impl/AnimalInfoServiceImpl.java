@@ -8,6 +8,18 @@ import org.slf4j.LoggerFactory;
 public class AnimalInfoServiceImpl implements AnimalInfoService {
     private static final Logger LOG = LoggerFactory.getLogger(AnimalInfoServiceImpl.class);
 
+    private static AnimalInfoServiceImpl instance;
+
+    public AnimalInfoServiceImpl() {
+    }
+
+    public static AnimalInfoServiceImpl getInstance() {
+        if (instance == null) {
+            instance = new AnimalInfoServiceImpl();
+        }
+        return instance;
+    }
+
     @Override
     public void greetings() {
         LOG.info("Wouw");

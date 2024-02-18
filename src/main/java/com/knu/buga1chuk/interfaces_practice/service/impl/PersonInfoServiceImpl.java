@@ -8,6 +8,18 @@ import org.slf4j.LoggerFactory;
 public class PersonInfoServiceImpl implements PersonInfoService {
     private static final Logger LOG = LoggerFactory.getLogger(PersonInfoServiceImpl.class);
 
+    private static PersonInfoServiceImpl instance;
+
+    public PersonInfoServiceImpl() {
+    }
+
+    public static PersonInfoServiceImpl getInstance() {
+        if (instance == null) {
+            instance = new PersonInfoServiceImpl();
+        }
+        return instance;
+    }
+
     @Override
     public void greetings() {
         LOG.info("Hello!");
