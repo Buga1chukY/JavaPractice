@@ -9,9 +9,19 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class CsvPersonSerializationService implements PersonSerializationService {
     private static final Logger LOG = LoggerFactory.getLogger(CsvPersonSerializationService.class);
+    private static CsvPersonSerializationService instance;
+
+    private CsvPersonSerializationService() {
+    }
+
+    public static CsvPersonSerializationService getInstance() {
+        if (instance == null) {
+            instance = new CsvPersonSerializationService();
+        }
+        return instance;
+    }
 
     @Override
     public void writePersonList(File file, PersonList personList) {

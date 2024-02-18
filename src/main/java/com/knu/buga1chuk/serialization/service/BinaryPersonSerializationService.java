@@ -10,6 +10,17 @@ import java.util.Base64;
 
 public class BinaryPersonSerializationService implements PersonSerializationService {
     private static final Logger LOG = LoggerFactory.getLogger(BinaryPersonSerializationService.class);
+    private static BinaryPersonSerializationService instance;
+
+    private BinaryPersonSerializationService() {
+    }
+
+    public static BinaryPersonSerializationService getInstance() {
+        if (instance == null) {
+            instance = new BinaryPersonSerializationService();
+        }
+        return instance;
+    }
 
     @Override
     public void writePersonList(File file, PersonList personList) {

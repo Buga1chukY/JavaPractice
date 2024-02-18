@@ -13,7 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 class BinaryPersonSerializationServiceTest {
-    private final BinaryPersonSerializationService binaryPersonSerializationService = new BinaryPersonSerializationService();
+    public static final BinaryPersonSerializationService binaryPersonSerializationService = BinaryPersonSerializationService.getInstance();
+    public static final FileUtils fileUtils = FileUtils.getInstance();
+    public static final Base64Utils base64Utils = Base64Utils.getInstance();
 
     @Test
     void shouldGetPersonListFromFile() {
@@ -45,8 +47,8 @@ class BinaryPersonSerializationServiceTest {
     void shouldToPersonListOnBase64() {
         File file = new File("target/test-files/writeOnePersonToFileTest.bin");
 
-        byte[] fileBytes = FileUtils.readFileToByteArray(file);
-        String base64 = Base64Utils.toBase64String(fileBytes);
+        byte[] fileBytes = fileUtils.readFileToByteArray(file);
+        String base64 = base64Utils.toBase64String(fileBytes);
 
         Person expected = new Person(1, "Ostap", 17, "Uzhgorod");
         PersonList personList = binaryPersonSerializationService.toPersonList(base64);
@@ -60,8 +62,8 @@ class BinaryPersonSerializationServiceTest {
     void shouldToPersonListOnEmptyString() {
         File file = new File("target/test-files/peopleTestWithEmptyFile.bin");
 
-        byte[] fileBytes = FileUtils.readFileToByteArray(file);
-        String base64 = Base64Utils.toBase64String(fileBytes);
+        byte[] fileBytes = fileUtils.readFileToByteArray(file);
+        String base64 = base64Utils.toBase64String(fileBytes);
 
         PersonList personList = binaryPersonSerializationService.toPersonList(base64);
 

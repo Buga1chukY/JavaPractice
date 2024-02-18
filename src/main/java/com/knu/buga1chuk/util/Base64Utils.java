@@ -3,10 +3,19 @@ package com.knu.buga1chuk.util;
 import java.util.Base64;
 
 public final class Base64Utils {
+    private static Base64Utils instance;
+
     private Base64Utils() {
     }
 
-    public static String toBase64String(byte[] fileBytes) {
+    public static Base64Utils getInstance() {
+        if (instance == null) {
+            instance = new Base64Utils();
+        }
+        return instance;
+    }
+
+    public String toBase64String(byte[] fileBytes) {
         String result = "";
 
         if (fileBytes != null) {

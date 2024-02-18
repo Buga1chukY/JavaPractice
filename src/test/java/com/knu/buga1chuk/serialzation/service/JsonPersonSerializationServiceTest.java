@@ -2,6 +2,7 @@ package com.knu.buga1chuk.serialzation.service;
 
 import com.knu.buga1chuk.model.Person;
 import com.knu.buga1chuk.model.PersonList;
+import com.knu.buga1chuk.serialization.service.CsvPersonSerializationService;
 import com.knu.buga1chuk.serialization.service.JsonPersonSerializationService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class JsonPersonSerializationServiceTest {
-    private final JsonPersonSerializationService jsonPersonSerializationService = new JsonPersonSerializationService();
+    public static final JsonPersonSerializationService jsonPersonSerializationService = JsonPersonSerializationService.getInstance();
 
     @Test
     void shouldToPersonListFromString() {

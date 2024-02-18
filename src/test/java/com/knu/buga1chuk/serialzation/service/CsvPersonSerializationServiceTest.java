@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class CsvPersonSerializationServiceTest {
-    private final CsvPersonSerializationService csvPersonSerializationService = new CsvPersonSerializationService();
+    public static final CsvPersonSerializationService csvPersonSerializationService = CsvPersonSerializationService.getInstance();
 
     @Test
     void shouldGetPersonListFromFile() {
